@@ -30,7 +30,7 @@ def atualizar_livro(request, id):
         titulo = request.POST.get("titulo")
         autor = request.POST.get("autor")
         data_publicacao = request.POST.get("data_publicacao")
-        descricao = request.POST.get('dscricao')
+        descricao = request.POST.get('descricao')
         
         if len(titulo) > 0:
             livro.titulo = titulo
