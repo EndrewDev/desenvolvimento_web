@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Livros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        #book-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #book-list li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #book-form form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #book-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        #book-form input, #book-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #book-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #book-form button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Biblioteca de Livros</h1>
+    </header>
+
+    <main>
+        <section id="book-list">
+            <h2>Livros Disponíveis</h2>
+            <ul id="books">
+                {% for book in livro %}
+                    <a href='{% url "detalhe-livro" book.id %}'><li>{{book}}</li></a>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="book-form">
+            <h2>Adicionar Novo Livro</h2>
+            <form id="new-book-form" method='POST' action='{% url "pagina-livro" %}'>
+                {% csrf_token %}
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required>
+
+                <label for="data_publicacao">Data de Publicação:</label>
+                <input type="date" id="data_publicacao" name="data_publicacao" required>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+
+                <button type="submit">Adicionar Livro</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

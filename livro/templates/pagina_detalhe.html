@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Livros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Detalhes de Livro</h1>
+    </header>
+
+    <p>Título: {{livro.titulo}}</p>
+    <p>Autor: {{livro.autor}}</p>
+    <p>Data publicação: {{livro.data_publicacao}}</p>
+    <p>Descrição: {{livro.descricao}}</p>
+    <br>
+    <br>
+    <a href='{% url "pagina-livro" %}'><button>Voltar</button></a>
+    <a href='{% url "deletar-livro" livro.id %}'><button>Deletar</button></a>
+    <a herf='{% url "atualiza-livro" livro.id %}'><button>Atualizar</button></a>
+
+</body>
+</html>
