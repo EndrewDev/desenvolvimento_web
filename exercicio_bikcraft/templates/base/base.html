@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "bikes/css/style.css" %}">
     <title>Bikcraft</title>
 </head>
@@ -13,7 +14,7 @@
         <a href="{% url "pagina-sobre" %}">Sobre</a>
         <a href="{% url "pagina-produtos" %}">Produtos</a>
         <a href="{% url "pagina-lojas" %}">Lojas</a>
-        <a href="#">Contato</a>
+        <a href="{% url "pagina-contados" %}">Contato</a>
     </div>
 
     {% block conteudo %}{% endblock conteudo %}

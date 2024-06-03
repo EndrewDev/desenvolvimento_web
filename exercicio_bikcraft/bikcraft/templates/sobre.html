@@ -1,119 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicicletas Feitas à Mão</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em 0;
-            text-align: center;
-        }
-        
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        main section {
-            margin-bottom: 20px;
-        }
-        
-        main section h2 {
-            color: back;
-        }
-        
-        footer {
-            box-sizing: border-box;
-            width: 100%;
-            text-align: center;
-            padding: 40px;
-            background: #ffffff;
-        }
-        
-        footer p {
-            margin: 0;
-        }
-        
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Bicicletas Feitas à Mão</h1>
-        <nav>
-            <ul>
-                <li><a href="#personalizacao">Personalização</a></li>
-                <li><a href="#materiais">Materiais</a></li>
-                <li><a href="#artesanato">Artesanato</a></li>
-                <li><a href="#desempenho">Desempenho e Conforto</a></li>
-                <li><a href="#custo">Custo</a></li>
-                <li><a href="#comunidade">Comunidade</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="personalizacao">
-            <h2>Personalização</h2>
-            <p>Uma das maiores vantagens das bicicletas feitas à mão é a possibilidade de personalização. Desde a escolha dos materiais do quadro até os componentes e acessórios, cada detalhe pode ser ajustado para se adequar ao ciclista.</p>
-        </section>
-        <section id="materiais">
-            <h2>Materiais</h2>
-            <p>Os quadros das bicicletas feitas à mão podem ser construídos a partir de vários materiais, incluindo aço, alumínio, titânio e fibra de carbono. Cada material oferece diferentes características de pilotagem e durabilidade.</p>
-        </section>
-        <section id="artesanato">
-            <h2>Artesanato</h2>
-            <p>O processo de fabricação envolve técnicas artesanais que garantem uma construção meticulosa e de alta qualidade. Os artesãos costumam ter anos de experiência e um profundo conhecimento das técnicas de soldagem, brasagem e montagem.</p>
-        </section>
-        <section id="desempenho">
-            <h2>Desempenho e Conforto</h2>
-            <p>Devido ao alto nível de personalização e atenção aos detalhes, essas bicicletas geralmente proporcionam um desempenho superior e maior conforto em comparação com as bicicletas produzidas em massa.</p>
-        </section>
-        <section id="custo">
-            <h2>Custo</h2>
-            <p>Devido ao trabalho intensivo e aos materiais de alta qualidade utilizados, as bicicletas feitas à mão tendem a ser mais caras. No entanto, muitos ciclistas consideram o investimento válido devido à durabilidade e ao prazer de pilotar uma bicicleta única.</p>
-        </section>
-        <section id="comunidade">
-            <h2>Comunidade e Cultura</h2>
-            <p>Há uma comunidade vibrante de fabricantes de bicicletas artesanais e entusiastas ao redor do mundo. Feiras e exposições de bicicletas feitas à mão são eventos populares onde fabricantes e ciclistas se reúnem para compartilhar suas criações e paixões.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Bicicletas Feitas à Mão. Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+{% extends "base/sobre.html" %}
+{% load static %}
+{% block conteudo %}
+<section id="home" class="hero">
+    <div class="outro_container">
+        <h2>Bem-vindo à Lojas Bicicletas Feita a Mão</h2>
+        <p>Encontre a bicicleta dos seus sonhos, feita especialmente para você.</p>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>Sobre Nós</h2>
+        <p>Na <strong>Lojas Bicicletas Feita a Mão</strong>, acreditamos que cada bicicleta deve ser uma expressão única de seu proprietário. Fundada por entusiastas de bicicletas, nossa loja é dedicada a criar bicicletas personalizadas que combinam design, desempenho e paixão pela ciclismo.</p>
+        <h3>Nossa Filosofia</h3>
+        <p>Cada bicicleta que produzimos é uma obra de amor e dedicação. Acreditamos que uma bicicleta deve ser mais do que apenas um meio de transporte; deve ser uma extensão da personalidade do ciclista. Por isso, nos esforçamos para criar bicicletas que não apenas atendam às necessidades funcionais, mas que também contem uma história.</p>
+        <h3>Nosso Processo de Fabricação</h3>
+        <p>Nosso processo de fabricação é uma combinação de técnicas tradicionais e inovação moderna. Cada bicicleta é projetada a partir do zero, com atenção meticulosa aos detalhes. Utilizamos materiais de alta qualidade e cada componente é escolhido para proporcionar a melhor performance e durabilidade. Desde a soldagem do quadro até a pintura final, cada etapa é realizada com precisão e cuidado.</p>
+        <h3>Nossa Equipe</h3>
+        <p>Temos uma equipe talentosa de artesãos e engenheiros que compartilham nossa paixão por bicicletas. Cada membro da nossa equipe traz uma combinação única de habilidades e experiências, contribuindo para a criação de bicicletas excepcionais. Estamos comprometidos com a aprendizagem contínua e a melhoria constante para garantir que estamos sempre na vanguarda da indústria.</p>
+        <h3>Compromisso com a Sustentabilidade</h3>
+        <p>Na Lojas Bicicletas Feita a Mão, a sustentabilidade é uma parte central da nossa missão. Estamos comprometidos em minimizar nosso impacto ambiental através de práticas de produção responsáveis e do uso de materiais ecológicos. Além disso, incentivamos nossos clientes a adotarem um estilo de vida mais sustentável, utilizando bicicletas como uma alternativa ecológica ao transporte motorizado.</p>
+        <h3>Venha nos Visitar</h3>
+        <p>Convidamos você a visitar nossa loja e conhecer mais sobre o nosso trabalho. Venha ver de perto o processo de fabricação, conhecer nossa equipe e, claro, experimentar nossas bicicletas feitas à mão. Estamos ansiosos para ajudá-lo a encontrar a bicicleta perfeita para suas aventuras.</p>
+    </div>
+</section>
+{% endblock conteudo %}

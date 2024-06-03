@@ -11,3 +11,6 @@ def produtos(request):
 
 def lojas(request):
     return render(request, 'lojas.html')
+
+def contados(request):
+    return render(request, 'contados.html')

@@ -1,27 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lojas Bicicletas Feita a Mão</title>
-    <link rel="stylesheet" href="{% static "bikes/css/lojas.css" %}">
+    <title>Contatos - Lojas Bicicletas Feita a Mão</title>
+    <link rel="stylesheet" href="{% static "bikes/css/contados.css" %}">
 </head>
 <body>
     <header>
-        <h1>Lojas Bicicletas Feita a Mão</h1>
+        <h1>Contatos - Lojas Bicicletas Feita a Mão</h1>
         <nav>
             <ul>
                 <li><a href="{% url "pagina-inicial" %}">Home</a></li>
                 <li><a href="{% url "pagina-produtos" %}">Produtos</a></li>
                 <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
-                <li><a href="{% url "pagina-contados" %}">Contato</a></li>
+                <li><a href="{% url "pagina-lojas" %}">Lojas</a></li>
             </ul>
         </nav>
     </header>
-
     {% block conteudo %}{% endblock conteudo %}
-
     <footer>
         <p>&copy; 2024 Lojas Bicicletas Feita a Mão. Todos os direitos reservados.</p>
     </footer>
