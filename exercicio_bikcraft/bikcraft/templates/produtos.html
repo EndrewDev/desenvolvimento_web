@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protudo Bicicletas Feita a Mão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+        
+        section h2 {
+            color: #333;
+        }
+        
+        .product-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .product-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+        }
+        
+        .product-item img {
+            max-width: 100%;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            box-sizing: border-box;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+            background: #ffffff;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        form label, form input, form textarea {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+        
+        form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Protudo Bicicletas Feita a Mão</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Bem-vindo à Protudo Bicicletas Feita a Mão</h2>
+        <p>Nossas bicicletas são feitas com paixão e precisão, garantindo qualidade e durabilidade.</p>
+    </section>
+
+    <section id="about">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma empresa dedicada à produção de bicicletas artesanais de alta qualidade.</p>
+    </section>
+
+    <section id="products">
+        <h2>Nossos Produtos</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="bike1.jpg" alt="Bicicleta 1">
+                <h3>Bicicleta Clássica</h3>
+                <p>Descrição do produto.</p>
+            </div>
+            <div class="product-item">
+                <img src="bike2.jpg" alt="Bicicleta 2">
+                <h3>Bicicleta Moderna</h3>
+                <p>Descrição do produto.</p>
+            </div>
+            <!-- Adicione mais produtos conforme necessário -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Protudo Bicicletas Feita a Mão. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
