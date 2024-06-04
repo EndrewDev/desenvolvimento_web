@@ -11,7 +11,7 @@ def dados_livros(request):
         try:
             Livro.objects.create(titulo=titulo, autor=autor, data_publicacao=data_publicacao, descricao=descricao)
         except:
-            return render(request, 'pagina_erro.html')
+            return redirect('erro')
     return render(request, 'pagina_livro.html', {'livro': livro})
 
 def detalhe_livro(request, id):
@@ -49,3 +49,6 @@ def atualizar_livro(request, id):
         return redirect("pagina-livro")
 
     return render(request, 'atualizar_livro.html', {'livro': livro})
+
+def erro(request):
+    return render(request, 'pagina_erro.html')
