@@ -11,8 +11,8 @@
                 {% endfor %}
             </ul>
         </section>
-
-        <section id="book-form">
+        <br>
+        <section id='book-form'>
             <h2>Adicionar Novo Livro</h2>
             <form id="new-book-form" method='POST' action='{% url "pagina-livro" %}'>
                 {% csrf_token %}
@@ -32,5 +32,6 @@
             </form>
         </section>
     </main>
+
 
 {% endblock livro %}
