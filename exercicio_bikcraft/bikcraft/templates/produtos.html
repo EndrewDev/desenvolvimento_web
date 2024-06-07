@@ -7,7 +7,7 @@
 
     <section class="contact-form">
         <h2>Cadastrada Produtos</h2>
-        <form method='POST', action='{% url "pagina-adicionado" %}'>
+        <form method='POST' enctype='multipart/form-data' action='{% url "pagina-adicionado" %}'>
             {% csrf_token %}
             <label for='modelo'>Modelo:</label>
             <input type='text' id='modelo' name='modelo' required>
@@ -21,7 +21,7 @@
             <label for='foto'>Foto:</label>
             <input type='file' id='foto' name='foto' accept='{% static "base/img/" %}'>
 
-            <button type='submit'>Enviar</button>
+            <button type='submit'>Adicionar</button>
         </form>
     </section>
 {% endblock conteudo %}

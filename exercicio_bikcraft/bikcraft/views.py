@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Bike, Contados
+from .forms import bikeform
 
 def home(request):
     return render(request, 'bike.html')
@@ -8,6 +9,16 @@ def sobre(request):
     return render(request, 'sobre.html')
 
 def produtos(request):
+    if request.method == 'POST':
+        bike_form = bikeform(request.POST, request.FILES)
+        if bike_form.is_valid():
+            bike_form.save()
+            return redirect('pagina-adicionado')
+        else:
+            bike_form = bikeform()
+    return render(request, 'produtos.html', {'bikes': bike_form})
+
+def lojas(request):
     bike = Bike.objects.all()
     if request.method == 'POST':
         modelo = request.POST.get('modelo')
@@ -15,12 +26,7 @@ def produtos(request):
         descricao = request.POST.get('descricao')
         foto = request.POST.get('foto')
         try:
-            Bike.objects.create(modelo=modelo, preco=preco, descricao=descricao, foto=foto)
-        except:
-            return redirect('erro')
-    return render(request, 'produtos.html', {'bike': bike})
-
-def lojas(request):
+            
     return render(request, 'lojas.html')
 
 def contados(request):
