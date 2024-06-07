@@ -16,7 +16,7 @@ def produtos(request):
             return redirect('pagina-adicionado')
         else:
             bike_form = bikeform()
-    return render(request, 'produtos.html', {'bikes': bike_form})
+    return render(request, 'produtos.html', {'form': bike_form})
 
 def lojas(request):
     bike = Bike.objects.all()
@@ -29,7 +29,7 @@ def lojas(request):
             bike = Bike.objects.create(modelo = modelo, preco = preco, descricao = descricao, foto = foto)
         except:
             return redirect('erro')
-    return render(request, 'lojas.html', {'bikes': bike})
+    return render(request, 'lojas.html', {'loja': bike})
 
 def contados(request):
     contado = Contados.objects.all()
@@ -50,7 +50,21 @@ def enviado(request):
     return render(request, 'enviado.html')
 
 def atualizado(request, id):
-    return render(request, 'ataulizado.html')
+    bike = get_object_or_404(Bike, id=id)
+
+    if request.method == 'POST':
+        modelo = request.POST.get('modelo')
+        preco = request.POST.get('preco')
+        descricao = request.POST.get('descricao')
+        foto = request.POST.get('foto')
+        try:
+            Bike.objects.create(modelo=modelo, preco=preco, descricao=descricao, foto=foto)
+        except:
+            return redirect('pagina-erro-atualizado')
+        
+    return render(request, 'ataulizado.html', {'atualizado': bike})
 
 def deleta(request, id):
-    return render(request, 'deleta.html')
+    bike = get_object_or_404(Bike, id=id)
+    bike.delete()
+    return redirect('pagina-sucesso-deleta')
