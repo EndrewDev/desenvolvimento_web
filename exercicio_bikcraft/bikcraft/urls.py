@@ -9,4 +9,6 @@ urlpatterns = [
     path('contados', views.contados, name='pagina-contados'),
     path('adicionado/', views.adicionado, name='pagina-adicionado'),
     path('enviado/', views.enviado, name='pagina-enviado'),
+    path('atualiza/<int:id>/', views.atualizado, name='pagina-atualizado'),
+    path('deleta/<int:id>/', views.deleta, name='pagina-deleta'),
 ]

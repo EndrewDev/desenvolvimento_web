@@ -26,8 +26,10 @@ def lojas(request):
         descricao = request.POST.get('descricao')
         foto = request.POST.get('foto')
         try:
-            
-    return render(request, 'lojas.html')
+            bike = Bike.objects.create(modelo = modelo, preco = preco, descricao = descricao, foto = foto)
+        except:
+            return redirect('erro')
+    return render(request, 'lojas.html', {'bikes': bike})
 
 def contados(request):
     contado = Contados.objects.all()
@@ -46,3 +48,9 @@ def adicionado(request):
 
 def enviado(request):
     return render(request, 'enviado.html')
+
+def atualizado(request, id):
+    return render(request, 'ataulizado.html')
+
+def deleta(request, id):
+    return render(request, 'deleta.html')
