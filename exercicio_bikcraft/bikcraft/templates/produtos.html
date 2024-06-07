@@ -3,23 +3,25 @@
 {% block conteudo %}
     <section id="home">
         <h2>Bem-vindo à Protudo Bicicletas Feita a Mão</h2>
-        <p>Nossas bicicletas são feitas com paixão e precisão, garantindo qualidade e durabilidade.</p>
     </section>
 
-    <section id="products">
-        <h2>Nossos Produtos</h2>
-        <div class="product-list">
-            <div class="product-item">
-                <img src="bike1.jpg" alt="Bicicleta 1">
-                <h3>Bicicleta Clássica</h3>
-                <p>Descrição do produto.</p>
-            </div>
-            <div class="product-item">
-                <img src="bike2.jpg" alt="Bicicleta 2">
-                <h3>Bicicleta Moderna</h3>
-                <p>Descrição do produto.</p>
-            </div>
-            <!-- Adicione mais produtos conforme necessário -->
-        </div>
+    <section class="contact-form">
+        <h2>Cadastrada Produtos</h2>
+        <form method='POST', action='{% url "pagina-adicionado" %}'>
+            {% csrf_token %}
+            <label for='modelo'>Modelo:</label>
+            <input type='text' id='modelo' name='modelo' required>
+
+            <label for='preco'>Preço:</label>
+            <input type='number' id='preco' name='preco' required>
+
+            <label for='descricao'>Descrição:</label>
+            <textarea id="message" name="descricao" required></textarea>
+
+            <label for='foto'>Foto:</label>
+            <input type='file' id='foto' name='foto' accept='{% static "base/img/" %}'>
+
+            <button type='submit'>Enviar</button>
+        </form>
     </section>
 {% endblock conteudo %}
