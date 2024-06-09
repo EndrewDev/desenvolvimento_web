@@ -46,8 +46,9 @@ main {
     padding: 2rem;
 }
 
-.adicionado {
+div#adicionado {
     text-align: center;
+    margin: 4rem auto;
 }
 
 footer {
