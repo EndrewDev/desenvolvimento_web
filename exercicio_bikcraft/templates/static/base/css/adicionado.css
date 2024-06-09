@@ -46,43 +46,8 @@ main {
     padding: 2rem;
 }
 
-.contact-form {
-    background: #fff;
-    padding: 2rem;
-    margin: 2rem auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 500px;
-}
-
-.contact-form h2 {
-    margin-bottom: 1rem;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact-form button {
-    background: #333;
-    color: #fff;
-    padding: 0.7rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    background: #575757;
+.adicionado {
+    text-align: center;
 }
 
 footer {

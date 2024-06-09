@@ -9,17 +9,14 @@
 
     <section id="products">
         <h2><center>Produtos</center></h2>
-        <div class="product-card">
-            <img src="bike1.jpg" alt="Bicicleta 1">
-            <h3>Bicicleta Clássica</h3>
-            <p>R$ 1.200,00</p>
-        </div>
-        <div class="product-card">
-            <img src="bike2.jpg" alt="Bicicleta 2">
-            <h3>Bicicleta Esportiva</h3>
-            <p>R$ 1.800,00</p>
-        </div>
-        <!-- Adicione mais produtos conforme necessário -->
+        {% for lojas in loja %}
+            <div class='product-card'>
+                <h2>{{lojas.modelo}}</h2>
+                <img class='foto' src='{{lojas.foto.url}}'/>
+                <P>{{lojas.descricao}}</p>
+                <h3>{{lojas.preco}}</h3>
+            </div>
+        {% endfor %}
     </section>
 </main>
 {% endblock conteudo %}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protudo Bicicletas Feita a Mão</title>
-    <link rel="stylesheet" href="{% static "bikes/css/produtos.css" %}">
+    <link rel="stylesheet" href="{% static "base/css/adicionado.css" %}">
 </head>
 <body>
     <header>
@@ -13,6 +13,7 @@
         <nav>
             <ul>
                 <li><a href="{% url "pagina-inicial" %}">Volta</a></li>
+                <li><a href='{% url "pagina-lojas" %}'>Ver lojas</a></li>
             </ul>
         </nav>
     </header>

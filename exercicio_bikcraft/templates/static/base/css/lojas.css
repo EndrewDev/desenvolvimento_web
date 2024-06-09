@@ -64,6 +64,10 @@ section {
     height: auto;
 }
 
+.foto {
+    max-width: 400px;
+}
+
 footer {
     background: #333;
     color: #fff;

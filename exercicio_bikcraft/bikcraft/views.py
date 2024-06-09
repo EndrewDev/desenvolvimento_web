@@ -14,8 +14,8 @@ def produtos(request):
         if bike_form.is_valid():
             bike_form.save()
             return redirect('pagina-adicionado')
-        else:
-            bike_form = bikeform()
+    else:
+        bike_form = bikeform()
     return render(request, 'produtos.html', {'form': bike_form})
 
 def lojas(request):

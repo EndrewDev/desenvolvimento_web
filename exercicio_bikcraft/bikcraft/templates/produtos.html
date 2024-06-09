@@ -9,7 +9,7 @@
         <h2>Cadastrada Produtos</h2>
         <form method='POST' enctype='multipart/form-data' action='{% url "pagina-adicionado" %}'>
             {% csrf_token %}
-            <label for='modelo'>Modelo:</label>
+{% comment %}             <label for='modelo'>Modelo:</label>
             <input type='text' id='modelo' name='modelo' required>
 
             <label for='preco'>Preço:</label>
@@ -19,7 +19,9 @@
             <textarea id="message" name="descricao" required></textarea>
 
             <label for='foto'>Foto:</label>
-            <input type='file' id='foto' name='foto' accept='{% static "base/img/" %}'>
+            <input type='file' id='foto' name='foto' accept='{% static "base/img/" %}'> {% endcomment %}
+
+            {{form.as_p}}
 
             <button type='submit'>Adicionar</button>
         </form>
