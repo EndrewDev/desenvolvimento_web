@@ -11,19 +11,20 @@ body {
     color: #333;
 }
 
+#home {
+    text-align: center;
+    margin: 4rem;
+}
+
 header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
+    text-align: center;
 }
 
 header h1 {
     margin-bottom: 0.5rem;
-}
-
-#home {
-    text-align: center;
-    margin: 4rem;
 }
 
 nav ul {
@@ -53,7 +54,7 @@ main {
 .contact-form {
     background: #fff;
     padding: 2rem;
-    margin: 6rem auto;
+    margin: 5rem auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     max-width: 500px;

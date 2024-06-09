@@ -20,15 +20,6 @@ def produtos(request):
 
 def lojas(request):
     bike = Bike.objects.all()
-    if request.method == 'POST':
-        modelo = request.POST.get('modelo')
-        preco = request.POST.get('preco')
-        descricao = request.POST.get('descricao')
-        foto = request.POST.get('foto')
-        try:
-            bike = Bike.objects.create(modelo = modelo, preco = preco, descricao = descricao, foto = foto)
-        except:
-            return redirect('erro')
     return render(request, 'lojas.html', {'loja': bike})
 
 def contados(request):
