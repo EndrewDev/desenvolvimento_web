@@ -57,14 +57,25 @@ def atualizado(request, id):
         preco = request.POST.get('preco')
         descricao = request.POST.get('descricao')
         foto = request.POST.get('foto')
-        try:
-            Bike.objects.create(modelo=modelo, preco=preco, descricao=descricao, foto=foto)
-        except:
-            return redirect('pagina-erro-atualizado')
+
+        if len(modelo) > 0:
+            bike.modelo = modelo
+        if len(preco) > 0:
+            bike.preco = preco
+        if len(descricao) > 0:
+            bike.descricao = descricao
+        if len(foto) > 0:
+            bike.foto = foto
+        bike.save()
+        return redirect('pagina-atualizadosucesso')
         
     return render(request, 'ataulizado.html', {'atualizado': bike})
+def atualizado_sucesso(request):
+    return render(request, 'atualizado_sucesso.html')
 
 def deleta(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
     return redirect('pagina-sucesso-deleta')
+def deleta_sucesso(request):
+    return render(request, 'deleta_sucesso.html')
