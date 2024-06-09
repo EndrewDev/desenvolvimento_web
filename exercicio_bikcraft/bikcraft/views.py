@@ -14,6 +14,8 @@ def produtos(request):
         if bike_form.is_valid():
             bike_form.save()
             return redirect('pagina-adicionado')
+        else:
+            return redirect('pagina-erro')
     else:
         bike_form = bikeform()
     return render(request, 'produtos.html', {'form': bike_form})
@@ -70,3 +72,6 @@ def deleta(request, id):
     return redirect('pagina-sucesso-deleta')
 def deleta_sucesso(request):
     return render(request, 'deleta_sucesso.html')
+
+def erro(request):
+    return render(request, 'erro.html')

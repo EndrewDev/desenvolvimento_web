@@ -13,4 +13,5 @@ urlpatterns = [
     path('atualizadosucesso/', views.atualizado_sucesso, name='pagina-atualizadosucesso'),
     path('deleta/<int:id>/', views.deleta, name='pagina-deleta'),
     path('deletasucesso/', views.deleta_sucesso, name='pagina-deletasucesso'),
+    path('erro/', views.erro, name='pagina-erro'),
 ]
