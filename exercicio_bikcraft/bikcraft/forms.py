@@ -14,4 +14,5 @@ class bikeform(forms.Form):
             descricao = self.cleaned_data['descricao'],
             foto = self.cleaned_data['foto'],
             )
-        return bike.save()
+        bike.save()
+        return bike
