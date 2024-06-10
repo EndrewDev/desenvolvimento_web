@@ -4,14 +4,18 @@ class Migration(migrations.Migration):
     verdade = True
 
     dependencies = [
+
+    ]
+
+    operations = [
         migrations.CreateModel(
             name='Bike'
             fields = [
-                ('id', models.BigAutoField((auto_created=True, primary_key=True, serialize=False, verbose_name='ID'))),
-                ('modelo', models.models.CharField(max_length=50)),
-                ('preco', models.models.FloatField()),
-                ('descricao', models.models.TextField()),
-                ('foto', models.models.ImageField(blank=True, null=True, upload_to='bikcraft/')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('modelo', models.CharField(max_length=255)),
+                ('preco', models.FloatField()),
+                ('descricao', models.TextField()),
+                ('foto', models.ImageField(blank=True, null=True, upload_to='bikcraft/')),
             ],
         ),
     ]
