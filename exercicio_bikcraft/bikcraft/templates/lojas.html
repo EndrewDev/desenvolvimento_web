@@ -14,7 +14,10 @@
                 <img class='foto' src='{{lojas.foto.url}}'/>
                 <p>{{lojas.descricao}}</p>
                 <h3> R$ {{lojas.preco}}</h3>
-                <a href='{% url "pagina-deleta" lojas.id %}'<button>Deleta</button></a>
+                <div class="button-container">
+                    <a href='{% url "pagina-deleta" lojas.id %}'><button>Deleta</button></a>
+                <a href='{% url "pagina-atualizado" lojas.id %}'><button id='atualiza'>Atualizar</button></a>
+                </div>
             </div>
         {% endfor %}
     </section>

@@ -85,10 +85,27 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
+}
+
+.button-container {
+    text-align: left;
+}
+
+.button-container button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 button:hover {
     background: #575757;
+}
+
+button#atualiza {
+    margin-top: 1rem;
 }
 
 footer {
