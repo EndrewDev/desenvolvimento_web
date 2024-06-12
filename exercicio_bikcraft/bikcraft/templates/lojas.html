@@ -6,15 +6,15 @@
         <h2><center>Bem-vindo à Lojas Bicicletas Feita a Mão</center></h2>
         <p><center>Nossas bicicletas são feitas com a maior qualidade e cuidado.</center></p>
     </section>
-
+    <h2><center>Produtos</center></h2>
     <section id="products">
-        <h2><center>Produtos</center></h2>
         {% for lojas in loja %}
             <div class='product-card'>
                 <h2>{{lojas.modelo}}</h2>
                 <img class='foto' src='{{lojas.foto.url}}'/>
                 <p>{{lojas.descricao}}</p>
-                <h3>{{lojas.preco}}</h3>
+                <h3> R$ {{lojas.preco}}</h3>
+                <a href='{% url "pagina-deleta" lojas.id %}'<button>Deleta</button></a>
             </div>
         {% endfor %}
     </section>

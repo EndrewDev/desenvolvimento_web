@@ -69,7 +69,7 @@ def atualizado_sucesso(request):
 def deleta(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
-    return redirect('pagina-sucesso-deleta')
+    return redirect('pagina-deletasucesso')
 def deleta_sucesso(request):
     return render(request, 'deleta_sucesso.html')
 
