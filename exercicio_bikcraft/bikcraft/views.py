@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from .forms import BikeModelForm
 from .models import Bike, Contados
-from .forms import BikeModelForm, ContadosModelForm
 
 def home(request):
     return render(request, 'bike.html')
@@ -30,14 +30,6 @@ def contados(request):
         nome = request.POST.get('nome')
         email = request.POST.get('email')
         mensagem = request.POST.get('mensagem')
-        contados_form = ContadosModelForm(request.POST, request.FILES)
-        if contados_form.is_valid():
-            contados_form.save()
-            return redirect('pagina-adicionado')
-        else:
-            return redirect('pagina-erro')
-    else:
-        contados_form = ContadosModelForm()
         try:
             Contados.objects.create(nome=nome, email=email, mensagem=mensagem)
         except:
@@ -48,7 +40,8 @@ def adicionado(request):
     return render(request, 'adicionado.html')
 
 def enviado(request):
-    return render(request, 'enviado.html')
+    contados = Contados.objects.all()
+    return render(request, 'enviado.html', {'contados': contados})
 
 def atualizado(request, id):
     bike = get_object_or_404(Bike, id=id)
