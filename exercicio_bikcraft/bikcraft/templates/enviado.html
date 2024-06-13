@@ -1,12 +1,10 @@
 {% extends "base/enviado.html" %}
 {% load static %}
-{% block conteudo %}
-{% for contado in contados %}    
+{% block conteudo %}  
+
     <div id='enviado'>
         <h2>Enviado com sucesso!</h2>
         <p>Agora fique no aguardo do seu e-mail.</p>
-        <p>{{contado.email}}</p>
     </div>
-{% endfor %}
-    
+
 {% endblock conteudo %}
