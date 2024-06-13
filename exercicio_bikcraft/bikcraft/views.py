@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import BikeModelForm, ContadosModelForm
-from .models import Bike, Contados
+from .forms import BikeModelForm, ContadosModelForm, LojasModelForm
+from .models import Bike, Contados, Lojas
 
 def home(request):
     return render(request, 'bike.html')
@@ -8,7 +8,7 @@ def home(request):
 def sobre(request):
     return render(request, 'sobre.html')
 
-def produtos(request):
+def cadastra_produtos(request):
     if request.method == 'POST':
         bike_form = BikeModelForm(request.POST, request.FILES)
         if bike_form.is_valid():
@@ -16,11 +16,11 @@ def produtos(request):
             return redirect('pagina-adicionado')
     else:
         bike_form = BikeModelForm()
-    return render(request, 'produtos.html', {'form': bike_form})
+    return render(request, 'cadastra_produtos.html', {'form': bike_form})
 
-def lojas(request):
+def produtos(request):
     bike = Bike.objects.all()
-    return render(request, 'lojas.html', {'loja': bike})
+    return render(request, 'produtos.html', {'loja': bike})
 
 def contados(request):
     if request.method == "POST":
@@ -72,3 +72,17 @@ def deleta_sucesso(request):
 
 def erro(request):
     return render(request, 'erro.html')
+
+def cadastra_loja(request):
+    if request.method == 'POST':
+        lojas_form = LojasModelForm(request.POST, request.FILES)
+        if lojas_form.is_valid():
+            lojas_form.save()
+            return redirect('pagina-adicionado')
+    else:
+        lojas_form = LojasModelForm()
+    return render(request, 'cadastra_lojas.html', {'lojas_form': lojas_form})
+
+def lojas(request):
+    lojas = Lojas.objects.all()
+    return render(request, 'lojas.html', {'lojas': lojas})

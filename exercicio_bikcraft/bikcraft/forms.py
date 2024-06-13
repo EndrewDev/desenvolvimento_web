@@ -1,5 +1,5 @@
 from django import forms
-from .models import Bike, Contados
+from .models import Bike, Contados, Lojas
 
 class BikeModelForm(forms.ModelForm):
     class Meta:
@@ -28,3 +28,8 @@ class ContadosModelForm(forms.ModelForm):
     def clean_email(self):
         email_verificado = self.cleaned_data.get('email')
         return email_verificado
+    
+class LojasModelForm(forms.ModelForm):
+    class Meta:
+        model = Lojas
+        fields = '__all__'

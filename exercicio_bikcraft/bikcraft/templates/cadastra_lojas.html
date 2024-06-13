@@ -1,0 +1,18 @@
+{% extends "base/cadastra_lojas.html" %} 
+{% load static %} 
+{% block conteudo %}
+    <section id="home">
+        <h2>Bem-vindo à Produto Bicicletas Feita a Mão</h2>
+    </section>
+
+    <section class="contact-form">
+        <h2>Cadastrada Produtos</h2>
+        <form method='POST' enctype='multipart/form-data' action='{% url "pagina-produtos" %}'>
+            {% csrf_token %}
+
+            {{lojas_form.as_p}}
+
+            <button type='submit'>Adicionar</button>
+        </form>
+    </section>
+{% endblock conteudo %}
