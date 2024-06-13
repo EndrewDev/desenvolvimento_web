@@ -25,16 +25,13 @@ class ContadosModelForm(forms.ModelForm):
         model = Contados
         fields = '__all__'
 
-        def clean_email(self):
-            email_verificado = self.cleaned_data.get('email')
-            def verificar_email_gmail(email):
-                return email.endswith('@gmail.com')
-            lista_email = []
-            if email_verificado != lista_email:
-                lista_email.append(email_verificado)
-                for email in lista_email:
-                    if verificar_email_gmail(email):
-                        raise forms.ValidationError('E-mail errado')
-            return email
-
-            
+    def clean_email(self):
+        email_verificado = self.cleaned_data.get('email')
+        def verificar_email_gmail(email):
+            return email.endswith('@gmail.com')
+        lista_email = []
+        lista_email.append(email_verificado)
+        for email in lista_email:
+            if verificar_email_gmail(email):
+                self.add_error('email', 'E-mail errado')
+        return email

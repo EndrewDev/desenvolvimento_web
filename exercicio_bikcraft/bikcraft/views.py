@@ -14,8 +14,6 @@ def produtos(request):
         if bike_form.is_valid():
             bike_form.save()
             return redirect('pagina-adicionado')
-        else:
-            return redirect('pagina-erro')
     else:
         bike_form = BikeModelForm()
     return render(request, 'produtos.html', {'form': bike_form})
@@ -30,8 +28,6 @@ def contados(request):
         if contados_form.is_valid():
             contados_form.save()
             return redirect('pagina-enviado')
-        else:
-            return redirect('pagina-erro')
     else:
         contados_form = ContadosModelForm()
     return render(request, 'contados.html', {'contados': contados_form})
