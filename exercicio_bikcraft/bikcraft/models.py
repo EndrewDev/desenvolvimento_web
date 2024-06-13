@@ -15,4 +15,4 @@ class Contados(models.Model):
     mensagem = models.TextField(verbose_name='Mensagem')
 
     def __str__(self):
-        return self.nome
+        return self.email

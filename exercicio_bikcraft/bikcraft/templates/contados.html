@@ -4,16 +4,10 @@
 <main>
     <section class="contact-form">
         <h2>Entre em Contato Conosco</h2>
-        <form action="{% url "pagina-enviado" %}" method="POST">
+        <form method='POST' enctype='multipart/form-data' action="{% url "pagina-contados" %}" method="POST">
             {% csrf_token %}
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
+            {{contados.as_p}}
 
             <button type="submit">Enviar</button>
         </form>

@@ -1,13 +1,13 @@
 from django import forms
-from .models import Bike
+from .models import Bike, Contados
 
 class BikeModelForm(forms.ModelForm):
-    class meta:
+    class Meta:
         model = Bike
         fields = '__all__'
 
     def clean_preco(self):
-        preco_cadastra = self.cleaned_data['preco']
+        preco_cadastra = self.cleaned_data.get('preco')
         if preco_cadastra < 200:
             self.add_error('preco', 'O preço não pode ser menor do que R$200')
         return preco_cadastra
@@ -19,3 +19,22 @@ class BikeModelForm(forms.ModelForm):
         if imagem.size > tamanho_imagem:
             raise forms.ValidationError('A imagem tem um tamanho maior que o suportado')
         return imagem
+
+class ContadosModelForm(forms.ModelForm):
+    class Meta:
+        model = Contados
+        fields = '__all__'
+
+        def clean_email(self):
+            email_verificado = self.cleaned_data.get('email')
+            def verificar_email_gmail(email):
+                return email.endswith('@gmail.com')
+            lista_email = []
+            if email_verificado != lista_email:
+                lista_email.append(email_verificado)
+                for email in lista_email:
+                    if verificar_email_gmail(email):
+                        raise forms.ValidationError('E-mail errado')
+            return email
+
+            
