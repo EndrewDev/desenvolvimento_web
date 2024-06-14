@@ -13,10 +13,12 @@
             <h1>Sobre - Bicicletas Feita a Mão</h1>
             <nav>
                 <ul>
-                    <li><a href="{% url "pagina-inicial" %}">Home</a></li>
-                    <li><a href="{% url "pagina-lojas" %}">Lojas</a></li>
-                    <li><a href="{% url "pagina-produtos" %}">Produtos</a></li>
-                    <li><a href="{% url "pagina-contados" %}">Contato</a></li>
+                    <a href='{% url "pagina-inicial" %}'>Início</a>
+                    <a href="{% url "pagina-cadastraprodutos" %}">Cadastrar Produtos</a>
+                    <a href='{% url "pagina-produtos" %}'>Produtos</a>
+                    <a href="{% url "cadastra-loja" %}">Cadastrar Lojas</a>
+                    <a href='{% url "pagina-loja" %}'>Lojas</a>
+                    <a href="{% url "pagina-contados" %}">Contato</a>
                 </ul>
             </nav>
         </div>

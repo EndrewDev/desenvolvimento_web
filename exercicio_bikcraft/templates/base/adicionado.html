@@ -12,10 +12,13 @@
         <h1>Protudo - Bicicletas Feita a Mão</h1>
         <nav>
             <ul>
-                <li><a href="{% url "pagina-inicial" %}">Home</a></li>
-                <li><a href="{% url "pagina-produtos" %}">Produtos</a></li>
-                <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
-                <li><a href="{% url "pagina-lojas" %}">Lojas</a></li>
+                <a href='{% url "pagina-inicial" %}'>Início</a>
+                <a href="{% url "pagina-sobre" %}">Sobre</a>
+                <a href="{% url "pagina-cadastraprodutos" %}">Cadastrar Produtos</a>
+                <a href='{% url "pagina-produtos" %}'>Produtos</a>
+                <a href="{% url "cadastra-loja" %}">Cadastrar Lojas</a>
+                <a href='{% url "pagina-loja" %}'>Lojas</a>
+                <a href="{% url "pagina-contados" %}">Contato</a>
             </ul>
         </nav>
     </header>
@@ -23,5 +26,21 @@
     <footer>
         <p>&copy; 2024 Protudo Bicicletas Feita a Mão. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular a adição do produto
+            const productName = document.getElementById('productName').value;
+            const productDescription = document.getElementById('productDescription').value;
+            const productImage = document.getElementById('productImage').value;
+        
+            // Exibir mensagem de sucesso
+            document.getElementById('successMessage').style.display = 'block';
+        
+            // Limpar o formulário
+            document.getElementById('productForm').reset();
+        });        
+    </script>
 </body>
 </html>

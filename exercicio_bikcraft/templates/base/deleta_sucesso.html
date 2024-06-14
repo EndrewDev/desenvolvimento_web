@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatos - Lojas Bicicletas Feita a Mão</title>
-    <link rel="stylesheet" href="{% static "base/css/deleta_sucesso.css" %}">
+    <link rel="stylesheet" href="{% static "base/css/deleta-sucesso.css" %}">
 </head>
 <body>
     <header>
         <h1>Contatos - Bicicletas Feita a Mão</h1>
         <nav>
             <ul>
-                <li><a href="{% url "pagina-inicial" %}">Home</a></li>
-                <li><a href="{% url "pagina-produtos" %}">Produtos</a></li>
-                <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
-                <li><a href="{% url "pagina-lojas" %}">Lojas</a></li>
+                <a href='{% url "pagina-inicial" %}'>Início</a>
+                <a href="{% url "pagina-sobre" %}">Sobre</a>
+                <a href="{% url "pagina-cadastraprodutos" %}">Cadastrar Produtos</a>
+                <a href='{% url "pagina-produtos" %}'>Produtos</a>
+                <a href="{% url "cadastra-loja" %}">Cadastrar Lojas</a>
+                <a href='{% url "pagina-loja" %}'>Lojas</a>
+                <a href="{% url "pagina-contados" %}">Contato</a>
             </ul>
         </nav>
     </header>

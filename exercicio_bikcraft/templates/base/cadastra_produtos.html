@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protudo Bicicletas Feita a Mão</title>
-    <link rel="stylesheet" href="{% static "base/css/cadastra_produtos.css" %}">
+    <title>Cadastrar Protudo Bicicletas Feita a Mão</title>
+    <link rel="stylesheet" href="{% static "base/css/cadastra-produtos.css" %}">
 </head>
 <body>
     <header>
-        <h1>Produto - Bicicletas Feita a Mão</h1>
+        <h1>Cadastrar Produto - Bicicletas Feita a Mão</h1>
         <nav>
             <ul>
-                <li><a href="{% url "pagina-inicial" %}">Home</a></li>
-                <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
-{% comment %}                 <li><a href="{% url "pagina-lojas" %}">Lojas</a></li> {% endcomment %}
-                <li><a href="{% url "pagina-contados" %}">Contato</a></li>
+                <a href='{% url "pagina-inicial" %}'>Início</a>
+                <a href="{% url "pagina-sobre" %}">Sobre</a>
+                <a href='{% url "pagina-produtos" %}'>Produtos</a>
+                <a href="{% url "cadastra-loja" %}">Cadastrar Lojas</a>
+                <a href='{% url "pagina-loja" %}'>Lojas</a>
+                <a href="{% url "pagina-contados" %}">Contato</a>
             </ul>
         </nav>
     </header>

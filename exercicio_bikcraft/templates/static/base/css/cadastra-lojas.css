@@ -79,16 +79,22 @@ main {
 }
 
 .contact-form button {
-    background: #333;
+    background: #e21;
     color: #fff;
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 10rem;
 }
 
 .contact-form button:hover {
     background: #575757;
+}
+
+#id_produtos {
+    padding-bottom: 5rem;
+    padding-right: 24rem;
 }
 
 footer {
