@@ -60,6 +60,7 @@ def atualizado(request, id):
         return redirect('pagina-atualizadosucesso')
         
     return render(request, 'ataulizado.html', {'atualizado': bike})
+
 def atualizado_sucesso(request):
     return render(request, 'atualizado_sucesso.html')
 

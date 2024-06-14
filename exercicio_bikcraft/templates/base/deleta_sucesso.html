@@ -12,19 +12,19 @@
         <h1>Contatos - Bicicletas Feita a Mão</h1>
         <nav>
             <ul>
-                <a href='{% url "pagina-inicial" %}'>Início</a>
-                <a href="{% url "pagina-sobre" %}">Sobre</a>
-                <a href="{% url "pagina-cadastraprodutos" %}">Cadastrar Produtos</a>
-                <a href='{% url "pagina-produtos" %}'>Produtos</a>
-                <a href="{% url "cadastra-loja" %}">Cadastrar Lojas</a>
-                <a href='{% url "pagina-loja" %}'>Lojas</a>
-                <a href="{% url "pagina-contados" %}">Contato</a>
+                <li><a href='{% url "pagina-inicial" %}'>Início</a></li>
+                <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
+                <li><a href="{% url "pagina-cadastraprodutos" %}">Cadastrar Produtos</a></li>
+                <li><a href='{% url "pagina-produtos" %}'>Produtos</a></li>
+                <li><a href="{% url "cadastra-loja" %}">Cadastrar Lojas</a></li>
+                <li><a href='{% url "pagina-loja" %}'>Lojas</a></li>
+                <li><a href="{% url "pagina-contados" %}">Contato</a></li>
             </ul>
         </nav>
     </header>
     {% block conteudo %}{% endblock conteudo %}
     <footer>
-        <p>&copy; 2024 Lojas Bicicletas Feita a Mão. Todos os direitos reservados.</p>
+        <p>&copy; Bikcraft. Alguns direitos reservados</p>
     </footer>
 </body>
 </html>

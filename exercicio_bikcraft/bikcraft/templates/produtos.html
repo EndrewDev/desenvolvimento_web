@@ -3,7 +3,7 @@
 {% block conteudo %}
 <main>
     <section id="home">
-        <h2><center>Bem-vindo à Lojas Bicicletas Feita a Mão</center></h2>
+        <h2><center>Bem-vindo à Produtos Bicicletas Feita a Mão</center></h2>
         <p><center>Nossas bicicletas são feitas com a maior qualidade e cuidado.</center></p>
     </section>
     <h2><center>Produtos</center></h2>
@@ -16,7 +16,7 @@
                 <h3> R$ {{lojas.preco}}</h3>
                 <div class="button-container">
                     <a href='{% url "pagina-deleta" lojas.id %}'><button>Deleta</button></a>
-                <a href='{% url "pagina-atualizado" lojas.id %}'><button id='atualiza'>Atualizar</button></a>
+                    <aid='atualizado'href='{% url "pagina-atualizado" lojas.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
             </div>
         {% endfor %}
