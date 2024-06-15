@@ -20,7 +20,7 @@ def cadastra_produtos(request):
 
 def produtos(request):
     bike = Bike.objects.all()
-    return render(request, 'produtos.html', {'loja': bike})
+    return render(request, 'produtos.html', {'produtos': bike})
 
 def contados(request):
     if request.method == "POST":
@@ -68,6 +68,7 @@ def deleta(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
     return redirect('pagina-deletasucesso')
+
 def deleta_sucesso(request):
     return render(request, 'deleta_sucesso.html')
 
@@ -87,3 +88,28 @@ def cadastra_loja(request):
 def lojas(request):
     lojas = Lojas.objects.all()
     return render(request, 'lojas.html', {'lojas': lojas})
+
+def atualizado_lojas(request, id):
+    bike = get_object_or_404(Bike, id=id)
+
+    if request.method == 'POST':
+        modelo = request.POST.get('modelo')
+        preco = request.POST.get('preco')
+        descricao = request.POST.get('descricao')
+        foto = request.POST.get('foto')
+
+        if len(modelo) > 0:
+            bike.modelo = modelo
+        if len(preco) > 0:
+            bike.preco = preco
+        if len(descricao) > 0:
+            bike.descricao = descricao
+        if len(foto) > 0:
+            bike.foto = foto
+        bike.save()
+        return redirect('pagina-atualizadosucesso')
+    
+def deleta_lojas(request, id):
+    bike = get_object_or_404(Bike, id=id)
+    bike.delete()
+    return redirect('pagina-deletasucesso')

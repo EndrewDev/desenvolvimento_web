@@ -8,15 +8,15 @@
     </section>
     <h2><center>Produtos</center></h2>
     <section id="products">
-        {% for lojas in loja %}
+        {% for produto in produtos %}
             <div class='product-card'>
-                <h2>{{lojas.modelo}}</h2>
-                <img class='foto' src='{{lojas.foto.url}}'/>
-                <p>{{lojas.descricao}}</p>
-                <h3> R$ {{lojas.preco}}</h3>
+                <h2>{{produto.modelo}}</h2>
+                <img class='foto' src='{{produto.foto.url}}'/>
+                <p>{{produto.descricao}}</p>
+                <h3> R$ {{produto.preco}}</h3>
                 <div class="button-container">
-                    <a href='{% url "pagina-deleta" lojas.id %}'><button>Deleta</button></a>
-                    <aid='atualizado'href='{% url "pagina-atualizado" lojas.id %}'><button id='atualiza'>Atualizar</button></a>
+                    <a href='{% url "pagina-deleta" produto.id %}'><button>Deleta</button></a>
+                    <aid='atualizado'href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
             </div>
         {% endfor %}
