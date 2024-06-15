@@ -52,18 +52,18 @@ main {
 }
 
 section#home {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-section#products {
+{% comment %} section#products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+} {% endcomment %}
 
-.product-card {
+{% comment %} .product-card {
     background: #efefef;
     grid-template-columns: 1fr;
     border-radius: 10px;
@@ -91,13 +91,7 @@ section#products {
 
 .button-container button:hover {
     background: #575757;
-}
-
-.foto {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
- }
+} {% endcomment %}
 
 p {
     text-align: center;
