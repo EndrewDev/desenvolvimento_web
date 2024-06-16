@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import BikeModelForm, ContadosModelForm, LojasModelForm
-from .models import Bike, Contados, Lojas
+from .forms import BikeModelForm, ContadosModelForm, LojasModelForm, PessoasModelForm, DetalheModeForm
+from .models import Bike, Contados, Lojas, Pessoas, DetalheBikes
 
 def home(request):
     return render(request, 'bike.html')
@@ -113,3 +113,27 @@ def deleta_lojas(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
     return redirect('pagina-deletasucesso')
+
+def pessoas(request):
+    if request.method == 'POST':
+        pessoas = PessoasModelForm(request.POST, request.FILES)
+        if pessoas.is_valid():
+            pessoas.save()
+            return redirect('pagina-adicionado')
+        else:
+            pessoas = PessoasModelForm()
+        return render(request, 'pessoas.html', {'pessoas': pessoas})
+    
+def informacao_pessoas(request):
+    informacao_pessoas = Pessoas.objects.all()
+    return render(request, 'informacao_pessoas.html', {'iformacao_pessoas': informacao_pessoas})
+    
+def detalhes_bikes(request):
+    if request.method == 'POST':
+        detalhe_bike = DetalheModeForm(request.POST, request.FILES)
+        if detalhe_bike.is_valid():
+            detalhe_bike.save()
+            return redirect('pagina-adicionado')
+        else:
+            detalhe_bike = DetalheModeForm()
+        return render(request, 'detalhe_bike.html', {'detalhe': detalhe_bike})

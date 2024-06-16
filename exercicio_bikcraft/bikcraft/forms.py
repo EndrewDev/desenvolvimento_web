@@ -44,21 +44,8 @@ class PessoasModelForm(forms.ModelForm):
     class Meta: 
         model = Pessoas
         fields = '__all__'
-    
-    def clean_cpf(self):
-        cpf = Pessoas.objects.all()
-        if cpf.cpf == cpf.cpf:
-            raise forms.ValidationError('cpf', 'Ops! CPF já existe. Tente outra')
-        return cpf
-
 
 class DetalheModeForm(forms.ModelForm):
     class Meta:
         mdoel: DetalheBikes
         fields: '__all__'
-    
-    def clean_opcao(self):
-        opcao = DetalheBikes.objects.all()
-        if opcao.opcao == opcao.opcao:
-            raise forms.ValidationError('opcao', 'Já existe. Escolha outra')
-        return opcao
