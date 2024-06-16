@@ -1,0 +1,18 @@
+{% extends "base/detalhe_bike.html" %} 
+{% load static %} 
+{% block conteudo %}
+    <section id="home">
+        <h2>Bem-vindo à Detalhe Bicicletas Feita a Mão</h2>
+    </section>
+
+    <section class="contact-form">
+        <h2>Detalhe</h2>
+        <form method='POST' enctype='multipart/form-data' action='{% url "pagina-produtos" %}'>
+            {% csrf_token %}
+
+            {{detalhe.as_p}}
+
+            <button type='submit'>Adicionar</button>
+        </form>
+    </section>
+{% endblock conteudo %}

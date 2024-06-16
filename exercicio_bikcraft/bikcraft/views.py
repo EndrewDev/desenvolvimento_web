@@ -120,9 +120,9 @@ def pessoas(request):
         if pessoas.is_valid():
             pessoas.save()
             return redirect('pagina-adicionado')
-        else:
-            pessoas = PessoasModelForm()
-        return render(request, 'pessoas.html', {'pessoas': pessoas})
+    else:
+        pessoas = PessoasModelForm()
+    return render(request, 'pessoas.html', {'pessoas': pessoas})
     
 def informacao_pessoas(request):
     informacao_pessoas = Pessoas.objects.all()
@@ -134,9 +134,9 @@ def detalhes_bikes(request):
         if detalhe_bike.is_valid():
             detalhe_bike.save()
             return redirect('pagina-adicionado')
-        else:
-            detalhe_bike = DetalheModeForm()
-        return render(request, 'detalhe_bike.html', {'detalhe': detalhe_bike})
+    else:
+        detalhe_bike = DetalheModeForm()
+    return render(request, 'detalhe_bike.html', {'detalhe': detalhe_bike})
 
 def detalhe(request):
     detalhe = DetalheBikes.objects.all()

@@ -11,6 +11,7 @@ urlpatterns = [
     path('lojas/', views.lojas, name='pagina-loja'),
     path('pessoas/', views.pessoas, name='pagina-pessoas'),
     path('informacao_pessoas/', views.informacao_pessoas, name='pagina-informacaopessoas'),
+    path('detalhe_bike/', views.detalhes_bikes, name='pagina-detalhebikes'),
     path('atualiza_lojas/<int:id>/', views.atualizado_lojas, name='atualiza-lojas'),
     path('deleta_lojas/<int:id>/', views.deleta_lojas, name='deleta-lojas'),
     path('adicionado/', views.adicionado, name='pagina-adicionado'),

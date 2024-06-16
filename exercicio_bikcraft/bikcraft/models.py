@@ -29,7 +29,7 @@ class Lojas(models.Model):
 class Pessoas(models.Model):
     nome = models.CharField(max_length=100, verbose_name='Nome')
     cpf  = models.CharField(max_length=11, verbose_name='CPF')
-    opcao_lojas = models.ForeignKey(Lojas, on_delete=models.CASCADE, primary_key=True, verbose_name='Nome da Loja')
+    opcao_lojas = models.ForeignKey(Lojas, on_delete=models.CASCADE, primary_key=True, verbose_name='Opção da Loja')
 
     def __str__(self):
         return self.nome

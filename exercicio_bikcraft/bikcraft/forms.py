@@ -47,5 +47,5 @@ class PessoasModelForm(forms.ModelForm):
 
 class DetalheModeForm(forms.ModelForm):
     class Meta:
-        mdoel: DetalheBikes
-        fields: '__all__'
+        model=  DetalheBikes
+        fields = '__all__'
