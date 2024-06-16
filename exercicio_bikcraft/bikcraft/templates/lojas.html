@@ -11,7 +11,7 @@
             <div class='product-card'>
                 <h2>{{lojas.nome}}</h2>
                 <p>{{lojas.produtos}}</p>
-                <h3> R$ {{lojas.detalhe}}</h3>
+                <h3>{{lojas.detalhe}}</h3>
                 <div class="button-container">
                     <a href='{% url "deleta-lojas" lojas.id %}'><button>Deleta</button></a>
                     <aid='atualizado'href='{% url "atualiza-lojas" lojas.id %}'><button id='atualiza'>Atualizar</button></a>

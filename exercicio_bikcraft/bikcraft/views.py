@@ -137,3 +137,7 @@ def detalhes_bikes(request):
         else:
             detalhe_bike = DetalheModeForm()
         return render(request, 'detalhe_bike.html', {'detalhe': detalhe_bike})
+
+def detalhe(request):
+    detalhe = DetalheBikes.objects.all()
+    return render(request, 'pagina-detalhemais', {'detalhe': detalhe})

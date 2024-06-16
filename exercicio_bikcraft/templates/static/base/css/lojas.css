@@ -55,15 +55,16 @@ section#home {
     margin-bottom: 1rem;
 }
 
-{% comment %} section#products {
+section#products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 40px;
+    padding: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} {% endcomment %}
+    margin-right: 50rem;
+}
 
-{% comment %} .product-card {
+.product-card {
     background: #efefef;
     grid-template-columns: 1fr;
     border-radius: 10px;
@@ -91,7 +92,7 @@ section#home {
 
 .button-container button:hover {
     background: #575757;
-} {% endcomment %}
+}
 
 p {
     text-align: center;
