@@ -58,7 +58,6 @@ def atualizado(request, id):
             bike.foto = foto
         bike.save()
         return redirect('pagina-atualizadosucesso')
-        
     return render(request, 'ataulizado.html', {'atualizado': bike})
 
 def atualizado_sucesso(request):
@@ -107,11 +106,11 @@ def atualizado_lojas(request, id):
         if len(foto) > 0:
             bike.foto = foto
         bike.save()
-        return redirect('pagina-atualizadosucesso')
-    
+    return redirect('pagina-atualizadosucesso')
+
 def deleta_lojas(request, id):
-    bike = get_object_or_404(Bike, id=id)
-    bike.delete()
+    deleta_lojas = get_object_or_404(Lojas, id=id)
+    deleta_lojas.delete()
     return redirect('pagina-deletasucesso')
 
 def pessoas(request):
@@ -127,7 +126,29 @@ def pessoas(request):
 def informacao_pessoas(request):
     informacao_pessoas = Pessoas.objects.all()
     return render(request, 'informacao_pessoas.html', {'iformacao_pessoas': informacao_pessoas})
+
+def atualiza_pessoas(request, id):
+    pessoas_atualiza = get_object_or_404(Pessoas, id=id)
+
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        cpf = request.POST.get('cpf')
+        opcao_lojas = request.POST.get('opcao_lojas')
+
+        if len(nome) > 0:
+            pessoas_atualiza.nome = nome
+        if len(cpf) > 0:
+            pessoas_atualiza.cpf = cpf
+        if len(opcao_lojas) > 0:
+            pessoas_atualiza.opcao_lojas = opcao_lojas
+        pessoas_atualiza.save()
+    return redirect('pagina-atualizadosucesso')
     
+def deleta_pessoas(request, id):
+    pessoas = get_object_or_404(Pessoas, id=id)
+    pessoas.delete()
+    return redirect('pagian-deletasucesso')
+
 def detalhes_bikes(request):
     if request.method == 'POST':
         detalhe_bike = DetalheModeForm(request.POST, request.FILES)
@@ -141,3 +162,20 @@ def detalhes_bikes(request):
 def detalhe(request):
     detalhe = DetalheBikes.objects.all()
     return render(request, 'pagina-detalhemais', {'detalhe': detalhe})
+
+def atualiza_detalhe(request, id):
+    detalhe_atualiza = get_object_or_404(DetalheBikes, id=id)
+    if request.method == 'POST':
+        opcao = request.POST.get('opcao')
+        detalhe = request.POST.get('detalhe')
+
+        if len(opcao) > 0:
+            detalhe_atualiza.opcao = opcao
+        if len(detalhe) > 0:
+            detalhe_atualiza.detalhe = detalhe
+        detalhe_atualiza.save()
+    return redirect('pagina-atualizadosucesso')
+
+def deleta_detalhe(request, id):
+    detalhe_deleta = get_object_or_404(DetalheBikes, id=id)
+    return redirect('pagina-deletasucesso')
