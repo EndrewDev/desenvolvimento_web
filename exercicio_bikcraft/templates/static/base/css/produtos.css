@@ -72,6 +72,10 @@ section#products {
     display: grid;
 }
 
+.button-container-cadastra {
+    text-align: center;
+}
+
 .button-container {
     text-align: left;
 }
