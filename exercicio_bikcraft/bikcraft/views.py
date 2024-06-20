@@ -178,4 +178,5 @@ def atualiza_detalhe(request, id):
 
 def deleta_detalhe(request, id):
     detalhe_deleta = get_object_or_404(DetalheBikes, id=id)
+    detalhe_deleta.delete()
     return redirect('pagina-deletasucesso')
