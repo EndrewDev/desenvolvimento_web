@@ -19,7 +19,7 @@
                 <h3> R$ {{produto.preco}}</h3>
                 <div class="button-container">
                     <a href='{% url "pagina-deleta" produto.id %}'><button>Deleta</button></a>
-                    <aid='atualizado'href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
+                    <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
             </div>
         {% endfor %}

@@ -73,36 +73,25 @@ section#products {
 }
 
 #button-container {
-    text-align: center;
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#botton-container {
-    background: #575757;
-}
-
-.button-container {
-    text-align: left;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
     background: #e21;
+    color: #fff;
+    padding: 0.7rem 1.0rem;
+    border: none;
+    border-radius: 5px;
+}
+
+#botton-container:hover {
+    background: #575757;
 }
 
 .button-container button {
     display: inline-block;
-    margin-right: 10px
-    padding: 10px 20px;
+    margin-right: 10px;
     font-size: 16px;
     cursor: pointer;
     background: #e21;
