@@ -72,17 +72,22 @@ section#products {
     display: grid;
 }
 
-#button-containercadastra {
-    background: red;
-    margin-right: 28rem;
-    margin-left: 28rem;
-    padding-left: -12rem;
-    color: white;
+#button-container {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
-    padding: 0.7rem 1.0rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#botton-container {
+    background: #575757;
 }
 
 .button-container {

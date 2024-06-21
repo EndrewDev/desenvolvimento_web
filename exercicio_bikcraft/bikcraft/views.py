@@ -13,7 +13,7 @@ def cadastra_produtos(request):
         bike_form = BikeModelForm(request.POST, request.FILES)
         if bike_form.is_valid():
             bike_form.save()
-            return redirect('pagina-adicionado')
+            return redirect('pagina-adicionado-produto')
     else:
         bike_form = BikeModelForm()
     return render(request, 'cadastra_produtos.html', {'form': bike_form})
@@ -33,7 +33,7 @@ def contados(request):
     return render(request, 'contados.html', {'contados': contados_form})
 
 def adicionado(request):
-    return render(request, 'adicionado.html')
+    return render(request, 'adicionado-produtos.html')
 
 def enviado(request):
     contados = Contados.objects.all()
