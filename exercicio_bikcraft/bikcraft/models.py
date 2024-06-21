@@ -29,13 +29,13 @@ class Lojas(models.Model):
 class Pessoas(models.Model):
     nome = models.CharField(max_length=100, verbose_name='Nome')
     cpf  = models.CharField(max_length=11, verbose_name='CPF')
-    opcao_lojas = models.ForeignKey(Lojas, on_delete=models.CASCADE, primary_key=True, verbose_name='Opção da Loja')
+    opcao_lojas = models.ForeignKey(Lojas, on_delete=models.CASCADE, verbose_name='Opção da Loja')
 
     def __str__(self):
         return self.nome
     
 class DetalheBikes(models.Model):
-    opcao = models.OneToOneField(Bike, on_delete=models.CASCADE, primary_key=True, verbose_name='Opção Bike')
+    opcao = models.OneToOneField(Bike, on_delete=models.CASCADE, verbose_name='Opção Bike')
     detalhe = models.CharField(max_length=255, verbose_name='Detalhe')
 
     def __str__(self):
