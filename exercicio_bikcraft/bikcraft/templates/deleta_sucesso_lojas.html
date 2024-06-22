@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lojas - Lojas Bicicletas Feita a Mão</title>
+    <title>Lojas - Bicicletas Feita a Mão</title>
     <link rel="stylesheet" href="{% static "base/css/deleta-sucesso.css" %}">
 </head>
 <body>
     <header>
-        <h1>Lojas - Bicicletas Feita a Mão</h1>
-        <nav>
-            <ul>
-                <li><a href='{% url "pagina-inicial" %}'>Voltar</a></li>
-                <li><a href='{% url "pagina-loja" %}'></a>Lojas</li>
-            </ul>
-        </nav>
+        <h1>LojasProdutos - Bicicletas Feita a Mão</h1>
     </header>
-    {% block conteudo %}{% endblock conteudo %}
+    <div id='deletasucesso'>
+        <h2>Deletado com sucesso!</h2>
+    </div>
+    </div>
+        <a href='{% url "pagina-lojas" %}'><button>Volta para lojas</button></a>
+        <a href='{% url "pagina-inicial" %}'><button>Sair</button></a>
+    </div>
     <footer>
         <p>&copy; Bikcraft. Alguns direitos reservados</p>
     </footer>

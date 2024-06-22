@@ -4,22 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lojas Bicicletas Feita a Mão</title>
+    <title>Detalhes Bicicletas Feita a Mão</title>
     <link rel="stylesheet" href="{% static "base/css/adicionado.css" %}">
 </head>
 <body>
     <header>
-        <h1>Lojas- Bicicletas Feita a Mão</h1>
+        <h1>Detalhes - Bicicletas Feita a Mão</h1>
     </header>
-    <div id='adicionado'>
-        <h2><center>Adicionado com sucesso!</center></h2>
-    </div>
-
     <div class='botao'>
-        <a href='{% url "pagina-lojas" %}'><button>Volta para Lojas</button></a>
-        <a href='{% url "pagina-inicial" %}'><button>Sair da Lojas</button></a>
+        <a href='{% url "pagina-detalhebikes" %}'><button>Volta para Detalhes</button></a>
+        <a href='{% url "pagina-inicial" %}'><button>Sair da Detalhes</button></a>
     </div>
-    <footer>
         <p>&copy; Bikcraft. Alguns direitos reservados</p>
     </footer>
 </body>
