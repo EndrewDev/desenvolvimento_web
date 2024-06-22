@@ -8,9 +8,6 @@ def home(request):
 def sobre(request):
     return render(request, 'sobre.html')
 
-def erro_cadastraprodutos(request):
-    return render(request, 'erro_cadastraprodutos.html')
-
 def cadastra_produtos(request):
     if request.method == 'POST':
         bike_form = BikeModelForm(request.POST, request.FILES)
@@ -19,35 +16,14 @@ def cadastra_produtos(request):
             return redirect('pagina-adicionado-produto')
     else:
         bike_form = BikeModelForm()
-        return render(request, 'erro_cadastraprodutos.html')
     return render(request, 'cadastra_produtos.html', {'form': bike_form})
-
-def produtos(request):
-    bike = Bike.objects.all()
-    return render(request, 'produtos.html', {'produtos': bike})
-
-def erro_contados(request):
-    return render(request, 'erro_contados.html')
-
-def contados(request):
-    if request.method == "POST":
-        contados_form = ContadosModelForm(request.POST, request.FILES)
-        if contados_form.is_valid():
-            contados_form.save()
-            return redirect('pagina-enviado')
-    else:
-        contados_form = ContadosModelForm()
-    return render(request, 'contados.html', {'contados': contados_form})
 
 def adicionado(request):
     return render(request, 'adicionado-produtos.html')
 
-def enviado(request):
-    contados = Contados.objects.all()
-    return render(request, 'enviado.html', {'contados': contados})
-
-def erro_atualizado(request):
-    return render(request, 'erro_atualizado.html')
+def produtos(request):
+    bike = Bike.objects.all()
+    return render(request, 'produtos.html', {'produtos': bike})
 
 def atualizado_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
@@ -70,9 +46,8 @@ def atualizado_produtos(request, id):
         return redirect('pagina-atualizadosucesso')
     return render(request, 'ataulizado.html', {'atualizado': bike})
 
-def atualizado_sucesso(request):
-    return render(request, 'atualizado_sucesso.html')
-
+def atualizado_sucessoprodutos(request):
+    return render(request, 'atualizado_sucessoprodutos.html')
 
 def deleta(request, id):
     bike = get_object_or_404(Bike, id=id)
@@ -82,22 +57,39 @@ def deleta(request, id):
 def deleta_sucesso(request):
     return render(request, 'deleta_produtos.html')
 
+def contados(request):
+    if request.method == "POST":
+        contados_form = ContadosModelForm(request.POST, request.FILES)
+        if contados_form.is_valid():
+            contados_form.save()
+            return redirect('pagina-enviado')
+    else:
+        contados_form = ContadosModelForm()
+    return render(request, 'contados.html', {'contados': contados_form})
+
+def enviado(request):
+    contados = Contados.objects.all()
+    return render(request, 'enviado.html', {'contados': contados})
+
 def cadastra_loja(request):
     if request.method == 'POST':
         lojas_form = LojasModelForm(request.POST, request.FILES)
         if lojas_form.is_valid():
             lojas_form.save()
-            return redirect('pagina-adicionado')
+            return redirect('adicionado-lojas')
     else:
         lojas_form = LojasModelForm()
     return render(request, 'cadastra_lojas.html', {'lojas_form': lojas_form})
 
-def erro_cadastralojas(request):
-    return render(request, 'erro_cadastralojas.html')
+def adicionado_lojas(request):
+    return render(request, 'adicionado_lojas.html')
 
 def lojas(request):
     lojas = Lojas.objects.all()
     return render(request, 'lojas.html', {'lojas': lojas})
+
+def atualizado_lojas(request):
+    return render('atualizado_lojas.html')
 
 def atualizado_lojas(request, id):
     bike = get_object_or_404(Bike, id=id)
@@ -117,17 +109,14 @@ def atualizado_lojas(request, id):
         if len(foto) > 0:
             bike.foto = foto
         bike.save()
-        return redirect('pagina-atualizadosucesso')
+        return redirect('atualizado-lojas')
     else:
         return render(request, 'erro_lojasatualizado.html')
 
 def deleta_lojas(request, id):
     deleta_lojas = get_object_or_404(Lojas, id=id)
     deleta_lojas.delete()
-    return render('pagina-deletasucessor')
-
-def erro_lojasatualizado(request):
-    return render(request, 'erro_lojasatualizado.html')
+    return render(request, 'deleta_lojas.html', {'deleta_lojas': deleta_lojas})
 
 def pessoas(request):
     if request.method == 'POST':
