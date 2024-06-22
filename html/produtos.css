@@ -72,19 +72,23 @@ section#products {
     display: grid;
 }
 
-#button-container {
-    display: inline-block;
-    margin-right: 10px;
+.button-cadastra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+}
+
+.button-cadastra button {
+    padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background: #e21;
+    background-color: #e21;
     color: #fff;
-    padding: 0.7rem 1.0rem;
-    border: none;
     border-radius: 5px;
 }
 
-#botton-container:hover {
+.button-cadastra button:hover {
     background: #575757;
 }
 
