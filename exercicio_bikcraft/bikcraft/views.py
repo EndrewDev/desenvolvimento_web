@@ -66,7 +66,7 @@ def atualizado_sucesso(request):
 def deleta(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
-    return redirect('pagina-deletasucesso')
+    return render(request, 'deleta-produtos.html')
 
 def deleta_sucesso(request):
     return render(request, 'deleta_sucesso.html')
@@ -111,7 +111,7 @@ def atualizado_lojas(request, id):
 def deleta_lojas(request, id):
     deleta_lojas = get_object_or_404(Lojas, id=id)
     deleta_lojas.delete()
-    return redirect('pagina-deletasucesso')
+    return render('pagina-deletasucessor')
 
 def pessoas(request):
     if request.method == 'POST':
@@ -147,7 +147,7 @@ def atualiza_pessoas(request, id):
 def deleta_pessoas(request, id):
     pessoas = get_object_or_404(Pessoas, id=id)
     pessoas.delete()
-    return redirect('pagian-deletasucesso')
+    return render(request, 'deleta_vendedores.html')
 
 def detalhes_bikes(request):
     if request.method == 'POST':

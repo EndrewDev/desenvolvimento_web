@@ -72,14 +72,14 @@ section#products {
     display: grid;
 }
 
-.button-lojas {
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 6vh;
 }
 
-.button-lojas button {
+.button button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -88,7 +88,7 @@ section#products {
     border-radius: 5px;
 }
 
-.button-lojas button:hover {
+.button button:hover {
     background: #575757;
 }
 
