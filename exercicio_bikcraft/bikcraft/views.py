@@ -8,6 +8,9 @@ def home(request):
 def sobre(request):
     return render(request, 'sobre.html')
 
+def erro_cadastraprodutos(request):
+    return render(request, 'erro_cadastraprodutos.html')
+
 def cadastra_produtos(request):
     if request.method == 'POST':
         bike_form = BikeModelForm(request.POST, request.FILES)
@@ -16,11 +19,15 @@ def cadastra_produtos(request):
             return redirect('pagina-adicionado-produto')
     else:
         bike_form = BikeModelForm()
+        return render(request, 'erro_cadastraprodutos.html')
     return render(request, 'cadastra_produtos.html', {'form': bike_form})
 
 def produtos(request):
     bike = Bike.objects.all()
     return render(request, 'produtos.html', {'produtos': bike})
+
+def erro_contados(request):
+    return render(request, 'erro_contados.html')
 
 def contados(request):
     if request.method == "POST":
@@ -39,7 +46,10 @@ def enviado(request):
     contados = Contados.objects.all()
     return render(request, 'enviado.html', {'contados': contados})
 
-def atualizado(request, id):
+def erro_atualizado(request):
+    return render(request, 'erro_atualizado.html')
+
+def atualizado_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
 
     if request.method == 'POST':
@@ -63,16 +73,14 @@ def atualizado(request, id):
 def atualizado_sucesso(request):
     return render(request, 'atualizado_sucesso.html')
 
+
 def deleta(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
-    return render(request, 'deleta-produtos.html')
+    return render(request, 'deleta-produtos.html', {'bikes': bike})
 
 def deleta_sucesso(request):
-    return render(request, 'deleta_sucesso.html')
-
-def erro(request):
-    return render(request, 'erro.html')
+    return render(request, 'deleta_produtos.html')
 
 def cadastra_loja(request):
     if request.method == 'POST':
@@ -83,6 +91,9 @@ def cadastra_loja(request):
     else:
         lojas_form = LojasModelForm()
     return render(request, 'cadastra_lojas.html', {'lojas_form': lojas_form})
+
+def erro_cadastralojas(request):
+    return render(request, 'erro_cadastralojas.html')
 
 def lojas(request):
     lojas = Lojas.objects.all()
@@ -106,12 +117,17 @@ def atualizado_lojas(request, id):
         if len(foto) > 0:
             bike.foto = foto
         bike.save()
-    return redirect('pagina-atualizadosucesso')
+        return redirect('pagina-atualizadosucesso')
+    else:
+        return render(request, 'erro_lojasatualizado.html')
 
 def deleta_lojas(request, id):
     deleta_lojas = get_object_or_404(Lojas, id=id)
     deleta_lojas.delete()
     return render('pagina-deletasucessor')
+
+def erro_lojasatualizado(request):
+    return render(request, 'erro_lojasatualizado.html')
 
 def pessoas(request):
     if request.method == 'POST':
