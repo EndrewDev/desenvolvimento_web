@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entra - Lojas Bicicletas Feita a Mão</title>
-    <link rel="stylesheet" href="{% static "base/css/contados.css" %}">
+    <link rel="stylesheet" href="{% static "base/css/acessar.css" %}">
 </head>
 <body>
     <header>
@@ -16,7 +16,8 @@
                 <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
                 <li><a href='{% url "pagina-produtos" %}'>Produtos</a></li>
                 <li><a href='{% url "pagina-loja" %}'>Lojas</a></li>
-                <li><a href='{% url "cadastra-usuario" %}'>Cadastra</a></li>
+                <li><a href="{% url "pagina-contados" %}">Contato</a></li>
+                <li><a href='{% url "cadastra-usuario" %}'>Cadastro</a></li>
                 {% if request.user.is_authenticated %}
                     <li><a href='{% url "sair" %}'>Sair</a></li>
                 {% else %}
@@ -34,7 +35,6 @@
                 {{form.as_p}}
     
                 <button>Entra</button>
-                <a href="{% url "pagina-inicial" %}"><button>Voltar</button></a>
             </form>
         </section>
     </main>

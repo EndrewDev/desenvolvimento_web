@@ -1,11 +1,43 @@
-{% extends "base/base.html" %}
-
 {% load static %}
-
-{% block conteudo %}
-<form method='POST' action='{% url "cadastra-usuario" %}'>
-    {% csrf_token %}
-    {{form.as_p}}
-    <button> Cadastrar </button>
-</form>
-{% endblock conteudo %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Lojas Bicicletas Feita a Mão</title>
+    <link rel="stylesheet" href="{% static "base/css/cadastra.css" %}">
+</head>
+<body>
+    <header>
+        <h1>Cadastro - Bicicletas Feita a Mão</h1>
+        <nav>
+            <ul>
+                <li><a href='{% url "pagina-inicial" %}'>Início</a></li>
+                <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
+                <li><a href='{% url "pagina-produtos" %}'>Produtos</a></li>
+                <li><a href='{% url "pagina-loja" %}'>Lojas</a></li>
+                <li><a href="{% url "pagina-contados" %}">Contato</a></li>
+                <li><a href='{% url "cadastra-usuario" %}'>Cadastro</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href='{% url "sair" %}'>Sair</a></li>
+                {% else %}
+                    <li><a href='{% url "acessar" %}'>Entrar</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-form">
+            <h2>Cadastra-se</h2>
+            <form method='POST' action='{% url "cadastra-usuario" %}'>
+                {% csrf_token %}
+                {{form.as_p}}
+                <button> Cadastrar </button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Bikcraft. Alguns direitos reservados</p>
+    </footer>
+</body>
+</html>
