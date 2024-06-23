@@ -1,12 +1,22 @@
-{% extends "base/pessoas.html" %} 
-{% load static %} 
-{% block conteudo %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas Bicicletas Feita a Mão</title>
+    <link rel="stylesheet" href="{% static "base/css/pessoas.css" %}">
+</head>
+<body>
+    <header>
+        <h1>Cadastra Vendedores - Bicicletas Feita a Mão</h1>
+    </header>
     <section id="home">
-        <h2>Bem-vindo à Vendedores Bicicletas Feita a Mão</h2>
+        <h2>Bem-vindo à Cadastra Vendedores Bicicletas Feita a Mão</h2>
     </section>
 
     <section class="contact-form">
-        <h2>Vendedores</h2>
+        <h2>Cadastra Vendedores</h2>
         <form method='POST' enctype='multipart/form-data' action='{% url "pagina-produtos" %}'>
             {% csrf_token %}
 
@@ -15,4 +25,8 @@
             <button type='submit'>Adicionar</button>
         </form>
     </section>
-{% endblock conteudo %}
+    <footer>
+        <p>&copy; Bikcraft. Alguns direitos reservados</p>
+    </footer>
+</body>
+</html>

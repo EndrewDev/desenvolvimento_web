@@ -11,6 +11,11 @@ body {
     color: #333;
 }
 
+#home {
+    text-align: center;
+    margin: 4rem;
+}
+
 header {
     background: #333;
     color: #fff;
@@ -22,33 +27,30 @@ header h1 {
     margin-bottom: 0.5rem;
 }
 
-nav ul {
-    list-style: none;
+#h1 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 0.5rem;
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
 }
 
-nav ul li a {
+.botao button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e21;
     color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-}
-
-nav ul li a:hover {
-    background: #575757;
     border-radius: 5px;
 }
 
-main {
-    padding: 2rem;
-}
-
-div#adicionado {
-    text-align: center;
-    margin: 4rem auto;
+.botao button:hover {
+    background: #575757;
 }
 
 footer {

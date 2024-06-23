@@ -50,9 +50,9 @@ def atualizado_produtos(request, id):
     return render(request, 'ataulizado.html', {'atualizado': bike})
 
 def deleta_sucesso_produtos(request):
-    return render('deleta_sucesso_produtos.html')
+    return render(request, 'deleta_sucesso_produtos.html')
 
-def deleta(request, id):
+def deleta_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
     return redirect('deleta-sucesso-produtos')
@@ -79,7 +79,7 @@ def cadastra_loja(request):
         lojas_form = LojasModelForm(request.POST, request.FILES)
         if lojas_form.is_valid():
             lojas_form.save()
-            return redirect('adicionado-lojas')
+            return redirect('pagina-adicionado-loja')
     else:
         lojas_form = LojasModelForm()
     return render(request, 'cadastra_lojas.html', {'lojas_form': lojas_form})
@@ -89,7 +89,7 @@ def lojas(request):
     return render(request, 'lojas.html', {'lojas': lojas})
 
 def atualiza_sucessolojas(request):
-    return render('atualizado_sucessolojas.html')
+    return render(request, 'atualizado_sucessolojas.html')
 
 def atualizado_lojas(request, id):
     bike = get_object_or_404(Bike, id=id)
@@ -124,7 +124,7 @@ def deleta_lojas(request, id):
 def adicionado_pessoas(request):
     return render(request, 'adicionado_pessoas.html')
 
-def pessoas(request):
+def cadastra_pessoas(request):
     if request.method == 'POST':
         pessoas = PessoasModelForm(request.POST, request.FILES)
         if pessoas.is_valid():
@@ -134,9 +134,9 @@ def pessoas(request):
         pessoas = PessoasModelForm()
     return render(request, 'pessoas.html', {'pessoas': pessoas})
     
-def informacao_pessoas(request):
+def vendedores(request):
     informacao_pessoas = Pessoas.objects.all()
-    return render(request, 'informacao_pessoas.html', {'iformacao_pessoas': informacao_pessoas})
+    return render(request, 'vendedores.html', {'iformacao_pessoas': informacao_pessoas})
 
 def atualizado_sucesso_pessoas(request):
     return render(request, 'atualizado_sucesso_pessoas.html')
@@ -197,7 +197,7 @@ def atualiza_detalhe(request, id):
         if len(detalhe) > 0:
             detalhe_atualiza.detalhe = detalhe
         detalhe_atualiza.save()
-    return redirect('pagina-atualizadosucesso')
+    return redirect('atualizado-sucesso-detalhe')
 
 def deleta_sucesso_detalhes(request):
     return render(request,'deleta_sucesso_detalhes.html')

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protudo Bicicletas Feita a Mão</title>
+    <link rel="stylesheet" href="{% static "base/css/vendedores.css" %}">
+</head>
+<body>
+    <header>
+        <h1>Vendedores - Bicicletas Feita a Mão</h1>
+        <nav>
+            <ul>
+                <li><a href='{% url "pagina-inicial" %}'>Início</a></li>
+                <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
+                <li><a href='{% url "pagina-produtos" %}'>Produtos</a></li>
+                <li><a href='{% url "pagina-loja" %}'>Lojas</a></li>
+                <li><a href='{% url "cadastra-usuario" %}'>Cadastra</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href='{% url "sair" %}'>Sair</a></li>
+                {% else %}
+                    <li><a href='{% url "acessar" %}'>Entrar</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2><center>Bem-vindo à Vendedores Bicicletas Feita a Mão</center></h2>
+            <p><center>Nossas bicicletas são feitas com a maior qualidade e cuidado.</center></p>
+        </section>
+        <h2><center>Vendedores</center></h2>
+        <div class="button-cadastra">
+            <a href='{% url "cadastra-pessoas" %}'><button>Cadastra Vendedores</button></a>
+        </div>
+        <section id="products">
+                <div class='product-card'>
+                    <h2>{{produto.modelo}}</h2>
+                    <img class='foto' src='{{produto.foto.url}}'/>
+                    <p>{{produto.descricao}}</p>
+                    <h3> R$ {{produto.preco}}</h3>
+                    <div class="button-container">
+                        <a href='#'><button>Deleta</button></a>
+                        <a id='atualizado' href='#'><button id='atualiza'>Atualizar</button></a>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Protudo Bicicletas Feita a Mão. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
