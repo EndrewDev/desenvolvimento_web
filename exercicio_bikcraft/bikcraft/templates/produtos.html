@@ -12,16 +12,26 @@
     </div>
     <section id="products">
         {% for produto in produtos %}
+
             <div class='product-card'>
                 <h2>{{produto.modelo}}</h2>
                 <img class='foto' src='{{produto.foto.url}}'/>
                 <p>{{produto.descricao}}</p>
                 <h3> R$ {{produto.preco}}</h3>
+
                 <div class="button-container">
                     <a href='{% url "deleta-produtos" produto.id %}'><button>Deleta</button></a>
                     <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
+
+                <ul>
+                    {% for loja in lojas %}
+                        <li>Loja: {{loja.nome}}</li>
+                    {% endfor %}
+                </ul>
+
             </div>
+
         {% endfor %}
     </section>
 </main>

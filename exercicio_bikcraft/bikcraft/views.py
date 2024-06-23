@@ -8,6 +8,9 @@ def home(request):
 def sobre(request):
     return render(request, 'sobre.html')
 
+def adicionado(request):
+    return render(request, 'adicionado-produtos.html')
+
 def cadastra_produtos(request):
     if request.method == 'POST':
         bike_form = BikeModelForm(request.POST, request.FILES)
@@ -17,9 +20,6 @@ def cadastra_produtos(request):
     else:
         bike_form = BikeModelForm()
     return render(request, 'cadastra_produtos.html', {'form': bike_form})
-
-def adicionado(request):
-    return render(request, 'adicionado-produtos.html')
 
 def produtos(request):
     bike = Bike.objects.all()
@@ -79,7 +79,7 @@ def cadastra_loja(request):
         lojas_form = LojasModelForm(request.POST, request.FILES)
         if lojas_form.is_valid():
             lojas_form.save()
-            return redirect('pagina-adicionado-loja')
+            return redirect('adicionado-lojas')
     else:
         lojas_form = LojasModelForm()
     return render(request, 'cadastra_lojas.html', {'lojas_form': lojas_form})
