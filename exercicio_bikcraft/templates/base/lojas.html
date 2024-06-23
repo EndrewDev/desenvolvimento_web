@@ -13,8 +13,9 @@
         <nav>
             <ul>
                 <li><a href="{% url "pagina-inicial" %}">Home</a></li>
-                <li><a href="{% url "pagina-produtos" %}">Produtos</a></li>
                 <li><a href="{% url "pagina-sobre" %}">Sobre</a></li>
+                <li><a href="{% url "pagina-produtos" %}">Produtos</a></li>
+                <li><a href='{% url "pagina-vendedores" %}'>Vendedores</a></li>
                 <li><a href="{% url "pagina-contados" %}">Contato</a></li>
                 <li><a href='{% url "cadastra-usuario" %}'>Cadastra</a></li>
                 {% if request.user.is_authenticated %}
@@ -25,6 +26,7 @@
             </ul>
         </nav>
     </header>
+
     {% block conteudo %}{% endblock conteudo %}
     <footer>
         <p>&copy; 2024 Lojas Bicicletas Feita a Mão. Todos os direitos reservados.</p>

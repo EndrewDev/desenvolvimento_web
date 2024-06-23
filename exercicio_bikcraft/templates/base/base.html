@@ -24,6 +24,10 @@
         {% endif %}
     </div>
 
+    {% if request.user.is_authenticated %}
+        <h1>Seja muito bem-vindo {{request.user.username}}!</h1>
+    {% endif %}
+
     {% block conteudo %}{% endblock conteudo %}
 
     
