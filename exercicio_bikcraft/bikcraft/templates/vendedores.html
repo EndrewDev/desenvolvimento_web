@@ -38,7 +38,11 @@
         <section id="products">
                 <div class='product-card'>
                     <div class="button-container">
-                        {% for vendedores in loja.vendedor_set.all %}{% endfor %}
+                        {% for vendedor in vendedores %}
+                            <h2>Nome: {{vendedor.nome}}</h2>
+                            <h3>CPF: {{vendedor.cpf}}</h3>
+                            <h3>Loja: {{vendedor.opcao_lojas}}</h3>
+                        {% endfor %}
                         <a href='#'><button>Deleta</button></a>
                         <a id='atualizado' href='#'><button id='atualiza'>Atualizar</button></a>
                     </div>

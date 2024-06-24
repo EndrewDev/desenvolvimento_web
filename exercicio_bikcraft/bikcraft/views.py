@@ -23,9 +23,7 @@ def cadastra_produtos(request):
 
 def produtos(request):
     bike = Bike.objects.all()
-    lojas = Lojas.objects.all()
-    vendedores = Pessoas.objects.all()
-    return render(request, 'produtos.html', {'produtos': bike, 'lojas': lojas, 'vendedores': vendedores})
+    return render(request, 'produtos.html', {'produtos': bike})
 
 def atualizado_sucessoprodutos(request):
     return render(request, 'atualizado_sucessoprodutos.html')
@@ -138,7 +136,7 @@ def cadastra_pessoas(request):
     
 def vendedores(request):
     informacao_pessoas = Pessoas.objects.all()
-    return render(request, 'vendedores.html', {'iformacao_pessoas': informacao_pessoas})
+    return render(request, 'vendedores.html', {'vendedores': informacao_pessoas})
 
 def atualizado_sucesso_pessoas(request):
     return render(request, 'atualizado_sucesso_pessoas.html')

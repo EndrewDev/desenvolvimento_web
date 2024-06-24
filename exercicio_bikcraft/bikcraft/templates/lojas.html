@@ -15,9 +15,9 @@
     <section id="products">
         {% for loja in lojas %}
             <div class='product-card'>
-                <h2>{{lojas.nome}}</h2>
-                <p>{{lojas.produtos}}</p>
-                <h3>{{lojas.detalhe}}</h3>
+                <h2>{{loja.nome}}</h2>
+                <h3>{{loja.produtos}}</h3>
+                <h3>{{loja.detalhe}}</h3>
                 <div class="button-container">
                     <a href='{% url "deleta-lojas" loja.id %}'><button>Deleta</button></a>
                     <aid='atualizado'href='{% url "atualiza-lojas" loja.id %}'><button id='atualiza'>Atualizar</button></a>

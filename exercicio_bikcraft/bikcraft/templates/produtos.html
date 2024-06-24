@@ -18,21 +18,13 @@
                 <img class='foto' src='{{produto.foto.url}}'/>
                 <p>{{produto.descricao}}</p>
                 <h3> R$ {{produto.preco}}</h3>
-
                 <div class="button-container">
                     <a href='{% url "deleta-produtos" produto.id %}'><button>Deleta</button></a>
                     <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
-            </div>
-            <div class='container-produtos'>
-                {% for vendedor in loja.vendedor_set.all %}
-                
-                    <div class='produto-item'>
-                        <h2>Vendedor: {{vendedor.nome}}</h2>
-                        <p>CPF: {{vendedor.cpf}}</h2>
-                        
-                    </div>
-                    {% endfor %}
+                {% for loja in produto.lojas_set.all %}
+                    <h3>Loja: {{loja}}</h3>
+                {% endfor %}
             </div>
         {% endfor %}
     </section>
