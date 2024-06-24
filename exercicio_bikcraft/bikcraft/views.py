@@ -23,7 +23,9 @@ def cadastra_produtos(request):
 
 def produtos(request):
     bike = Bike.objects.all()
-    return render(request, 'produtos.html', {'produtos': bike})
+    lojas = Lojas.objects.all()
+    vendedores = Pessoas.objects.all()
+    return render(request, 'produtos.html', {'produtos': bike, 'lojas': lojas, 'vendedores': vendedores})
 
 def atualizado_sucessoprodutos(request):
     return render(request, 'atualizado_sucessoprodutos.html')

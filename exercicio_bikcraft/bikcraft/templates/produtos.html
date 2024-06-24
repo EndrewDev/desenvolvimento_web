@@ -24,12 +24,15 @@
                     <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
             </div>
-            <div>
-                <ul>
-                    {% for loja in lojas %}
-                        <li>Loja: {{loja.nome}}</li>
+            <div class='container-produtos'>
+                {% for vendedor in loja.vendedor_set.all %}
+                
+                    <div class='produto-item'>
+                        <h2>Vendedor: {{vendedor.nome}}</h2>
+                        <p>CPF: {{vendedor.cpf}}</h2>
+                        
+                    </div>
                     {% endfor %}
-                </ul>
             </div>
         {% endfor %}
     </section>
