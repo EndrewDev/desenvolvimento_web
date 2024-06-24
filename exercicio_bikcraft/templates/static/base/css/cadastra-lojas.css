@@ -78,6 +78,11 @@ main {
     border-radius: 5px;
 }
 
+#id_produtos {
+    padding-bottom: 5rem;
+    padding-right: 23.8rem;
+}
+
 .button-container {
     text-align: center;
 }
