@@ -4,7 +4,7 @@ class Bike(models.Model):
     modelo = models.CharField(max_length=255, verbose_name='Modelo')
     preco = models.FloatField(verbose_name='Preço')
     descricao = models.TextField(verbose_name='Descrição')
-    foto = models.ImageField(upload_to='bikcraft/', blank=True, null=True, verbose_name='Foto')
+    foto = models.ImageField(upload_to='media/bikcraft/', blank=True, null=True, verbose_name='Foto')
 
     def __str__(self):
         return self.modelo
