@@ -11,10 +11,9 @@
             {% csrf_token %}
 
             {{form.as_p}}
-        <div class='button-container'>
-            <button type='submit'>Adicionar</button>
-            <a href="{% url "pagina-produtos" %}"><button>Volta para Produtos</button></a>
-        </div>
+            <div class='button-container'>
+                <button type='submit'>Adicionar</button>
+            </div>
         </form>
     </section>
 {% endblock conteudo %}

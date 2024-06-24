@@ -23,15 +23,14 @@
                     <a href='{% url "deleta-produtos" produto.id %}'><button>Deleta</button></a>
                     <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
-
+            </div>
+            <div>
                 <ul>
                     {% for loja in lojas %}
                         <li>Loja: {{loja.nome}}</li>
                     {% endfor %}
                 </ul>
-
             </div>
-
         {% endfor %}
     </section>
 </main>

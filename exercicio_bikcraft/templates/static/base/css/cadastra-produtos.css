@@ -79,15 +79,17 @@ main {
 }
 
 .button-container {
-    text-align: left; /* Para alinhar à esquerda */
+    text-align: center;
 }
 
 .button-container button {
     display: inline-block;
-    margin-right: 10px; /* Espaçamento entre os botões */
+    margin-right: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background: #e21;
+    color: #fff;
 }
 
 .button-container button:hover {

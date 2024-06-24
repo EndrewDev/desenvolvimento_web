@@ -79,8 +79,7 @@ main {
 }
 
 .button-container {
-    text-align: left;
-    padding-left: 4.2rem;
+    text-align: center;
 }
 
 .button-container button {
@@ -90,7 +89,7 @@ main {
     font-size: 16px;
     cursor: pointer;
     background: #e21;
-    color; #fff;
+    color: #fff;
 }
 
 .button-container button:hover {

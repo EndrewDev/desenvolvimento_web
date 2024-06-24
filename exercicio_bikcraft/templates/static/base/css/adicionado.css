@@ -33,6 +33,15 @@ header h1 {
     margin-bottom: 2rem;
 }
 
+#adicionado {
+    margin-top: 7rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
 .botao{
     display: flex;
     justify-content: center;
