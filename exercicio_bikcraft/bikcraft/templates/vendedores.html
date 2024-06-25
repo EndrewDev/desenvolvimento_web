@@ -40,12 +40,12 @@
                 <div class='product-card'>
                     <div class="button-container">
                         {% for vendedor in vendedores %}
-                            <h2>Nome: {{vendedor.nome}}</h2>
-                            <h3>CPF: {{vendedor.cpf}}</h3>
+                            <h1>Nome: {{vendedor.nome}}</h2>
+                            <h2>CPF: {{vendedor.cpf}}</h3>
                             <h3>Loja: {{vendedor.opcao_lojas}}</h3>
                         {% endfor %}
-                        <a href='#'><button>Deleta</button></a>
-                        <a id='atualizado' href='#'><button id='atualiza'>Atualizar</button></a>
+                        <a href='{% url "deleta-sucesso-vendedores" %}'><button>Deleta</button></a>
+                        <a id='atualizado' href='atualiza-vendedores'><button id='atualiza'>Atualizar</button></a>
                     </div>
                 </div>
         </section>
