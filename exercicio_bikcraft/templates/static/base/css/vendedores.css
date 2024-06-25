@@ -76,6 +76,14 @@ section#products {
     padding-right: 23.6rem;
 }
 
+h4 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
 .button-cadastra{
     display: flex;
     justify-content: center;

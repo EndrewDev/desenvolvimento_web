@@ -37,17 +37,22 @@
             <a href='{% url "cadastra-pessoas" %}'><button>Cadastra Vendedores</button></a>
         </div>
         <section id="products">
+            {% for vendedor in vendedores %}
                 <div class='product-card'>
                     <div class="button-container">
                         {% for vendedor in vendedores %}
-                            <h1>Nome: {{vendedor.nome}}</h2>
-                            <h2>CPF: {{vendedor.cpf}}</h3>
-                            <h3>Loja: {{vendedor.opcao_lojas}}</h3>
+                            <h4>Nome:</h4>
+                            <p>{{vendedor.nome}}</p>
+                            <h4>CPF:</h4>
+                            <p>{{vendedor.cpf}}</p>
+                            <h4>Loja:</h4>
+                            <p>{{vendedor.opcao_lojas}}</p><br>
                         {% endfor %}
-                        <a href='{% url "deleta-sucesso-vendedores" %}'><button>Deleta</button></a>
+                        <a href='{% url "deleta-pessoas" vendedor.id %}'><button>Deleta</button></a>
                         <a id='atualizado' href='atualiza-vendedores'><button id='atualiza'>Atualizar</button></a>
                     </div>
                 </div>
+            {% endfor %}
         </section>
     </main>
     <footer>
