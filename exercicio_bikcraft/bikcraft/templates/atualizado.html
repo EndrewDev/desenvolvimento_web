@@ -34,11 +34,24 @@
         <h2>Atualizar Produtos</h2>
         <form method='POST' enctype='multipart/form-data' action='{% url "pagina-cadastraprodutos" %}'>
             {% csrf_token %}
+            
             <p>
-                <label for='id_modelo'>Modelo</label>
-                <input id='id_modelo' type='text' name='modelo'>
+                <label for='id_modelo'>Modelo:</label>
+                <input id='id_modelo' type='text' name='modelo' maxlength='255' required=''>
             </p>
-
+            <p>
+                <label for='id_preco'>Preço:</label>
+                <input id='id_preco' type='number' name='preco' step='any' required=''>
+            </p>
+            <p>
+                <label for='id_descricao'>Descrição:</label>
+                <textarea id='id_descricao' name='descricao' clos='40' rows='10' required=''></textarea>
+            </p>
+            <p>
+                <label for='id_foto'>Foto:</label>
+                <input id='id_foto' type='file' name='foto' accept='image/'>
+            </p>
+            
             <div class='button-container'>
                 <button type='submit'>Atualizar</button>
             </div>
