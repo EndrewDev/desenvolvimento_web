@@ -109,9 +109,8 @@ def atualizado_lojas(request, id):
         if len(foto) > 0:
             bike.foto = foto
         bike.save()
-        return redirect('atualiza-sucessolojas')
-    else:
-        return render(request, 'erro_lojasatualizado.html')
+
+    return redirect('atualiza-sucessolojas')
 
 def deleta_sucesso_lojas(request):
     return render(request, 'deleta_sucesso_lojas.html',)
@@ -193,7 +192,7 @@ def detalhes_bikes(request):
 
 def detalhe(request):
     detalhe = DetalheBikes.objects.all()
-    return render(request, 'pagina-detalhemais.html', {'detalhe': detalhe})
+    return render(request, 'pagina-detalhemais.html', {'detalhes': detalhe})
 
 def atualizado_sucesso_detalhe(request):
     return render(request, 'atualizado_sucesso_detalhe.html')
@@ -215,6 +214,7 @@ def atualiza_detalhe(request, id):
         if len(detalhe) > 0:
             detalhe_atualiza.detalhe = detalhe
         detalhe_atualiza.save()
+        
     return redirect('atualizado-sucesso-detalhe')
 
 def deleta_sucesso_detalhes(request):

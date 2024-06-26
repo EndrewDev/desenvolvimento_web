@@ -41,4 +41,4 @@ class DetalheBikes(models.Model):
     detalhe = models.CharField(max_length=255, verbose_name='Detalhe')
 
     def __str__(self):
-        return self.detalhe
+        return self.bike
