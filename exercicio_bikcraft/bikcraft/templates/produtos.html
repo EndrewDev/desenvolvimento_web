@@ -7,9 +7,15 @@
         <p><center>Nossas bicicletas são feitas com a maior qualidade e cuidado.</center></p>
     </section>
     <h2><center>Produtos</center></h2>
+    <br>
     <div class="button-cadastra">
         <a href='{% url "pagina-cadastraprodutos" %}'><button>Cadastra Produtos</button></a>
     </div>
+    <br>
+    <div class='col-12'>
+        <input type='text' class='form-control' id='search' placeholder='Pesquisa lojas'>
+    </div>
+    <br>
     <section id="products">
         {% for produto in produtos %}
 
@@ -26,7 +32,7 @@
                     {% if loja %}
                         <h3>Loja: {{loja}}</h3>
                     {% else %}
-                        <h3>Infelizmente, não tem nenhum loja com esse modelo.</h3>
+                        <h3>Infelizmente, não tem nenhum loja com esse modelo</h3>
                     {% endif %}
                 {% endfor %}
             </div>

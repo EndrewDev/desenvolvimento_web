@@ -91,6 +91,15 @@ section#products {
     background: #575757;
 }
 
+.col-12 {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .button-container button {
     display: inline-block;
     margin-right: 10px;
@@ -107,11 +116,30 @@ section#products {
     background: #575757;
 }
 
+
+.container-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+
+.produto-item{
+    background: #efefef;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    padding: 20px 0px;
+    justify-items: center;
+    display: grid;
+}
+
+
 .foto {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
- }
+   width: 150px;
+   height: 150px;
+   border-radius: 20px;
+}
 
 p {
     text-align: center;
