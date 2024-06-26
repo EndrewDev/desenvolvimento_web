@@ -109,8 +109,8 @@ def atualizado_lojas(request, id):
         if len(foto) > 0:
             bike.foto = foto
         bike.save()
-
-    return redirect('atualiza-sucessolojas')
+        return redirect('atualiza-sucessolojas')
+    return render(request, 'atualiza_loja.html', {'bike': bike})
 
 def deleta_sucesso_lojas(request):
     return render(request, 'deleta_sucesso_lojas.html',)

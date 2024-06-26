@@ -26,7 +26,7 @@ urlpatterns = [
     path('deleta_detalhe/<int:id>/', views.deleta_detalhe, name='detalhe-detela'),
     path('deleta_lojas/<int:id>/', views.deleta_lojas, name='pagina_deletalojas'),
     path('adicionado_lojas/', views.adicionado_lojas, name='adicionado-lojas'),
-    path('atualizado-lojas/', views.atualizado_lojas, name='atualizado-lojas'),
+    path('atualizado-lojas/<int:id>/', views.atualizado_lojas, name='atualizado-lojas'),
     path('atualiza_sucessolojas/', views.atualiza_sucessolojas, name='atualiza-sucessolojas'),
     path('deleta_sucesso_lojas/', views.deleta_sucesso_lojas, name='deleta-sucesso-lojas'),
     path('adicionado_pessoas/', views.adicionado_pessoas, name='adicionado-pessoas'),
@@ -37,5 +37,4 @@ urlpatterns = [
     path('atualizado_sucesso_detalhe/', views.atualizado_sucesso_detalhe, name='atualizado-sucesso-detalhe'),
     path('detalhes/', views.detalhe, name='pagina-detalhe'),
     path('cadastra_detalhe/', views.detalhes_bikes, name='cadastra-detalhe'),
-    path('adicionado_detalhe/', views.adicionado_detalhe, name='adicionado-detalhe'),
 ]
