@@ -35,7 +35,9 @@ class Pessoas(models.Model):
         return self.nome
     
 class DetalheBikes(models.Model):
-    opcao = models.OneToOneField(Bike, on_delete=models.CASCADE, verbose_name='Bikes')
+    bike = models.OneToOneField(Bike, on_delete=models.CASCADE, verbose_name='Bike')
+    marca = models.CharField(max_length=50, verbose_name='Marca')
+    cor = models.CharField(max_length=50, verbose_name='Cor')
     detalhe = models.CharField(max_length=255, verbose_name='Detalhe')
 
     def __str__(self):

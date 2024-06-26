@@ -189,7 +189,7 @@ def detalhes_bikes(request):
             return redirect('adicionado-detalhe')
     else:
         detalhe_bike = DetalheModeForm()
-    return render(request, 'detalhe_bikes.html', {'detalhe': detalhe_bike})
+    return render(request, 'detalhe_bike.html', {'detalhe': detalhe_bike})
 
 def detalhe(request):
     detalhe = DetalheBikes.objects.all()
@@ -201,11 +201,17 @@ def atualizado_sucesso_detalhe(request):
 def atualiza_detalhe(request, id):
     detalhe_atualiza = get_object_or_404(DetalheBikes, id=id)
     if request.method == 'POST':
-        opcao = request.POST.get('opcao')
+        bike = request.POST.get('bike')
+        marca = request.POST.get('marca')
+        cor = request.POST.get('cor')
         detalhe = request.POST.get('detalhe')
 
-        if len(opcao) > 0:
-            detalhe_atualiza.opcao = opcao
+        if len(bike) > 0:
+            detalhe_atualiza.bike = bike
+        if len(marca) > 0:
+            detalhe_atualiza.marca = marca
+        if len(cor) > 0:
+            detalhe_atualiza.cor = cor
         if len(detalhe) > 0:
             detalhe_atualiza.detalhe = detalhe
         detalhe_atualiza.save()
