@@ -23,7 +23,11 @@
                     <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
                 {% for loja in produto.lojas_set.all %}
-                    <h3>Loja: {{loja}}</h3>
+                    {% if loja %}
+                        <h3>Loja: {{loja}}</h3>
+                    {% else %}
+                        <h3>Infelizmente, não tem nenhum loja com esse modelo.</h3>
+                    {% endif %}
                 {% endfor %}
             </div>
         {% endfor %}

@@ -18,11 +18,11 @@
                     <li><a href='{% url "pagina-loja" %}'>Lojas</a></li>
                     <li><a href='{% url "pagina-vendedores" %}'>Vendedores</a></li>
                     <li><a href="{% url "pagina-contados" %}">Contato</a></li>
-                    <li><a href='{% url "cadastra-usuario" %}'>Cadastro</a></li>
                     {% if request.user.is_authenticated %}
-                    <li><a href='{% url "sair" %}'>Sair</a></li>
+                        <li><a href='{% url "sair" %}'>Sair</a></li>
                     {% else %}
-                    <li><a href='{% url "acessar" %}'>Entrar</a></li>
+                        <li><a href='{% url "cadastra-usuario" %}'>Cadastro</a></li>
+                        <li><a href='{% url "acessar" %}'>Entrar</a></li>
                     {% endif %}
                 </ul>
             </nav>

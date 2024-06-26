@@ -1,4 +1,6 @@
+{% extends "base/detalhe_bike.html" %}
 {% load static %}
+{% block conteudo %}
 <h1> Sobre a loja </h1>
 
 <h2> Nome: {{loja.nome}} </h2>
@@ -31,3 +33,4 @@
         </div>
         {% endfor %}
 </div>
+{% endblock conteudo %}
