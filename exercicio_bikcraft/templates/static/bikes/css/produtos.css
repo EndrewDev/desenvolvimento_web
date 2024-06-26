@@ -11,10 +11,16 @@ body {
     color: #333;
 }
 
+#home {
+    text-align: center;
+    margin: 4rem;
+}
+
 header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
+    text-align: center;
 }
 
 header h1 {
@@ -45,52 +51,117 @@ main {
     padding: 2rem;
 }
 
-.contact-form {
-    background: #fff;
-    padding: 2rem;
-    margin: 2rem auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 500px;
+section#home {
+    margin-bottom: 2rem;
 }
 
-.contact-form h2 {
-    margin-bottom: 1rem;
-    text-align: center;
+section#products {
+    display: grid;
+    gap: 30px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
+.col-12 {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.form-control {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
 }
 
-.contact-form button {
-    background: #333;
+
+.product-card {
+    background: #efefef;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    padding: 20px 0px;
+    justify-items: center;
+    display: grid;
+}
+
+.button-cadastra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+}
+
+.button-cadastra button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e21;
     color: #fff;
-    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+}
+
+.button-cadastra button:hover {
+    background: #575757;
+}
+
+.button-container button {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #e21;
+    color: #fff;
+    padding: 0.7rem 1.0rem;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-.contact-form button:hover {
+.button-container button:hover {
     background: #575757;
+}
+
+
+.container-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+
+.produto-item{
+    background: #efefef;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    padding: 20px 0px;
+    justify-items: center;
+    display: grid;
+}
+
+
+.foto {
+   width: 150px;
+   height: 150px;
+   border-radius: 20px;
+}
+
+p {
+    text-align: center;
 }
 
 footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
 }

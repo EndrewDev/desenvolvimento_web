@@ -13,7 +13,7 @@
     </div>
     <br>
     <div class='col-12'>
-        <input type='text' class='form-control' id='search' placeholder='Pesquisa lojas'>
+        <input type='text' class='form-control' id='search' placeholder='Pesquisa Produtos'>
     </div>
     <br>
     <section id="products">
@@ -30,8 +30,10 @@
                 </div>
                 {% for loja in produto.lojas_set.all %}
                     {% if loja %}
-                        <h3>Loja: {{loja}}</h3>
+                        <br>
+                        <h3>Lojas disponível: {{loja}}</h3>
                     {% else %}
+                        <br>
                         <h3>Infelizmente, não tem nenhum loja com esse modelo</h3>
                     {% endif %}
                 {% endfor %}

@@ -81,7 +81,6 @@ section#products {
     font-size: 16px;
 }
 
-
 .product-card {
     background: #efefef;
     grid-template-columns: 1fr;
