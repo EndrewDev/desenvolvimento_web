@@ -193,7 +193,7 @@ def detalhes_bikes(request):
 
 def detalhe(request):
     detalhe = DetalheBikes.objects.all()
-    return render(request, 'pagina-detalhemais', {'detalhe': detalhe})
+    return render(request, 'pagina-detalhemais.html', {'detalhe': detalhe})
 
 def atualizado_sucesso_detalhe(request):
     return render(request, 'atualizado_sucesso_detalhe.html')
