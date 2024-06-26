@@ -80,16 +80,6 @@ section#products {
     font-size: 16px;
 }
 
-
-.product-card {
-    background: #efefef;
-    grid-template-columns: 1fr;
-    border-radius: 10px;
-    padding: 20px 0px;
-    justify-items: center;
-    display: grid;
-}
-
 .button-cadastra{
     display: flex;
     justify-content: center;
@@ -127,15 +117,19 @@ section#products {
 }
 
 
-.container-produtos {
+#products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 40px;
 }
 
+.lista_lojas {
+    margin-top: 1rem;
+}
 
-.produto-item{
+
+.product-card{
     background: #efefef;
     grid-template-columns: 1fr;
     border-radius: 10px;
@@ -143,7 +137,6 @@ section#products {
     justify-items: center;
     display: grid;
 }
-
 
 .foto {
    width: 150px;

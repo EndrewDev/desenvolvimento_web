@@ -27,16 +27,18 @@
                 <div class="button-container">
                     <a href='{% url "deleta-produtos" produto.id %}'><button>Deleta</button></a>
                     <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
+                    <a href='{% url "detalhe-bikes" %}'><button>Mais informação</button></a>
                 </div>
-                {% for loja in produto.lojas_set.all %}
-                    {% if loja %}
-                        <br>
-                        <h3>Lojas disponível: {{loja}}</h3>
-                    {% else %}
-                        <br>
-                        <h3>Infelizmente, não tem nenhum loja com esse modelo</h3>
-                    {% endif %}
-                {% endfor %}
+                <br>
+                <div class='lista_lojas'>
+                    {% for loja in produto.lojas_set.all %}
+                        {% if loja %}
+                            <h3>Lojas disponível: {{loja}}</h3>
+                        {% else %}
+                            <h3>Infelizmente, não tem nenhum loja com esse modelo</h3>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         {% endfor %}
     </section>
