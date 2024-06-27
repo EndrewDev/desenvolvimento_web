@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BikeModelForm, ContadosModelForm, LojasModelForm, PessoasModelForm, DetalheModeForm
 from .models import Bike, Contados, Lojas, Pessoas, DetalheBikes
 
+# home:
 def home(request):
     return render(request, 'bike.html')
 
+# sobre:
 def sobre(request):
     return render(request, 'sobre.html')
 
+# cadastra produtos:
 def cadastra_produtos(request):
     if request.method == 'POST':
         bike_form = BikeModelForm(request.POST, request.FILES)
@@ -18,10 +21,12 @@ def cadastra_produtos(request):
         bike_form = BikeModelForm()
     return render(request, 'cadastra_produtos.html', {'form': bike_form})
 
+# recebe as informação para html:
 def produtos(request):
     bike = Bike.objects.all()
     return render(request, 'produtos.html', {'produtos': bike})
 
+# atualiza produto:
 def atualizado_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
 
@@ -43,11 +48,13 @@ def atualizado_produtos(request, id):
         return redirect('pagina-produtos')
     return render(request, 'cadastra_produtos.html', {'atualizado': bike})
 
+# deleta produto:
 def deleta_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
     return redirect('pagina-produtos')
 
+# contado:
 def contados(request):
     if request.method == "POST":
         contados_form = ContadosModelForm(request.POST, request.FILES)
@@ -58,10 +65,12 @@ def contados(request):
         contados_form = ContadosModelForm()
     return render(request, 'contados.html', {'contados': contados_form})
 
+# enviado com sucesso do contado:
 def enviado(request):
     contados = Contados.objects.all()
     return render(request, 'enviado.html', {'contados': contados})
 
+# cadastra loja:
 def cadastra_loja(request):
     if request.method == 'POST':
         lojas_form = LojasModelForm(request.POST, request.FILES)
@@ -72,10 +81,12 @@ def cadastra_loja(request):
         lojas_form = LojasModelForm()
     return render(request, 'cadastra_lojas.html', {'lojas_form': lojas_form})
 
+# recebe as informação para html:
 def lojas(request):
     lojas = Lojas.objects.all()
     return render(request, 'lojas.html', {'lojas': lojas})
 
+# atualiza loja:
 def atualizado_lojas(request, id):
     bike = get_object_or_404(Bike, id=id)
 
@@ -97,11 +108,13 @@ def atualizado_lojas(request, id):
         return redirect('pagina-loja')
     return render(request, 'cadastra_lojas.html', {'bike': bike})
 
+# deleta loja:
 def deleta_lojas(request, id):
     deleta_lojas = get_object_or_404(Lojas, id=id)
     deleta_lojas.delete()
     return redirect('pagina-loja')
 
+#cadstra vendedor:
 def cadastra_pessoas(request):
     if request.method == 'POST':
         pessoas = PessoasModelForm(request.POST, request.FILES)
@@ -112,10 +125,12 @@ def cadastra_pessoas(request):
         pessoas = PessoasModelForm()
     return render(request, 'pessoas.html', {'pessoas': pessoas})
     
+# recebe as informação para html:
 def vendedores(request):
     informacao_pessoas = Pessoas.objects.all()
     return render(request, 'vendedores.html', {'vendedores': informacao_pessoas})
 
+#atualiza vendedor:
 def atualiza_pessoas(request, id):
     pessoas_atualiza = get_object_or_404(Pessoas, id=id)
 
@@ -132,13 +147,15 @@ def atualiza_pessoas(request, id):
             pessoas_atualiza.opcao_lojas = opcao_lojas
         pessoas_atualiza.save()
         return redirect('pagina-vendedores')
-    return render(request, 'cpessoas.html', {'vendeodres': pessoas_atualiza})
+    return render(request, 'pessoas.html', {'vendeodres': pessoas_atualiza})
 
+# deleta vendedor:
 def deleta_pessoas(request, id):
     pessoas = get_object_or_404(Pessoas, id=id)
     pessoas.delete()
     return redirect('pagina-vendedores')
 
+# cadastra detalhe: 
 def detalhes_bikes(request):
     if request.method == 'POST':
         detalhe_bike = DetalheModeForm(request.POST, request.FILES)
@@ -149,13 +166,12 @@ def detalhes_bikes(request):
         detalhe_bike = DetalheModeForm()
     return render(request, 'detalhe_bike.html', {'detalhe': detalhe_bike})
 
+# recebe as informação para html:
 def detalhe(request):
     detalhe = DetalheBikes.objects.all()
     return render(request, 'pagina-detalhemais.html', {'detalhes': detalhe})
 
-def atualizado_sucesso_detalhe(request):
-    return render(request, 'atualizado_sucesso_detalhe.html')
-
+# atualiza detalhe:
 def atualiza_detalhe(request, id):
     detalhe_atualiza = get_object_or_404(DetalheBikes, id=id)
     if request.method == 'POST':
@@ -173,12 +189,10 @@ def atualiza_detalhe(request, id):
         if len(detalhe) > 0:
             detalhe_atualiza.detalhe = detalhe
         detalhe_atualiza.save()
-        
-    return redirect('atualizado-sucesso-detalhe')
+        return redirect('atualizado-sucesso-detalhe')
+    return render(request, 'detalhe_bike.html')
 
-def deleta_sucesso_detalhes(request):
-    return render(request,'deleta_sucesso_detalhes.html')
-
+# deleta detalhe:
 def deleta_detalhe(request, id):
     detalhe_deleta = get_object_or_404(DetalheBikes, id=id)
     detalhe_deleta.delete()

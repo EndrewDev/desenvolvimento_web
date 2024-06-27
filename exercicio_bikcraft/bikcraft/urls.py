@@ -23,11 +23,6 @@ urlpatterns = [
     path('deleta_detalhe/<int:id>/', views.deleta_detalhe, name='detalhe-detela'),
     path('deleta_lojas/<int:id>/', views.deleta_lojas, name='pagina_deletalojas'),
     path('atualizado-lojas/<int:id>/', views.atualizado_lojas, name='atualizado-lojas'),
-    path('atualizado_sucesso_pessoas/', views.atualizado_sucesso_pessoas, name='atualizado-sucesso-pessoas'),
-    path('deleta_sucesso_pessoas/', views.deleta_sucesso_pessoas, name='deleta-sucesso-pessoas'),
-    path('adicionado_detalhe/', views.adicionado_detalhe, name='adicionado-detalhe'),
-    path('deleta_sucesso_detalhes/', views.deleta_sucesso_detalhes, name='deleta-sucesso-detalhes'),
-    path('atualizado_sucesso_detalhe/', views.atualizado_sucesso_detalhe, name='atualizado-sucesso-detalhe'),
     path('detalhes/', views.detalhe, name='pagina-detalhe'),
     path('cadastra_detalhe/', views.detalhes_bikes, name='cadastra-detalhe'),
 ]
