@@ -27,9 +27,37 @@
             <h2>Entra</h2>
             <form method='POST' action="{% url "acessar" %}">
                 {% csrf_token %}
-    
-                {{form.as_p}}
-    
+
+                {% comment %} erro {% endcomment %}
+                {% if form.non_field_errors %}
+                    <div class='error'>
+                        {% for error in form.non_field_errors %}
+                            <p>{{error}}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% comment %} username {% endcomment %}
+                <div class='field'>
+                    <label>Usuário</label>
+                    {{form.username}}
+                    {% if form.username.errors %}
+                        {% for erro in form.username.errors %}
+                            <p>{{error}}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                {% comment %} password {% endcomment %}
+                <div class='field'>
+                    <label>Senha</label>
+                    {{form.password}}
+                    {% if form.password.errors %}
+                        {% for error in form.password.errors %}
+                            <p>{{error}}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
                 <button>Entra</button>
             </form>
         </section>
