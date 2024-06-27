@@ -8,15 +8,12 @@ def home(request):
 def sobre(request):
     return render(request, 'sobre.html')
 
-def adicionado(request):
-    return render(request, 'adicionado-produtos.html')
-
 def cadastra_produtos(request):
     if request.method == 'POST':
         bike_form = BikeModelForm(request.POST, request.FILES)
         if bike_form.is_valid():
             bike_form.save()
-            return redirect('pagina-adicionado-produto')
+            return redirect('pagian-produtos')
     else:
         bike_form = BikeModelForm()
     return render(request, 'cadastra_produtos.html', {'form': bike_form})
@@ -24,9 +21,6 @@ def cadastra_produtos(request):
 def produtos(request):
     bike = Bike.objects.all()
     return render(request, 'produtos.html', {'produtos': bike})
-
-def atualizado_sucessoprodutos(request):
-    return render(request, 'atualizado_sucessoprodutos.html')
 
 def atualizado_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
@@ -46,16 +40,13 @@ def atualizado_produtos(request, id):
         if len(foto) > 0:
             bike.foto = foto
         bike.save()
-        return redirect('pagina-atualizadosucesso')
-    return render(request, 'atualizado.html', {'atualizado': bike})
-
-def deleta_sucesso_produtos(request):
-    return render(request, 'deleta_sucesso_produtos.html')
+        return redirect('pagina-produtos')
+    return render(request, 'cadastra_produtos.html', {'atualizado': bike})
 
 def deleta_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
     bike.delete()
-    return redirect('deleta-sucesso-produtos')
+    return redirect('pagina-produtos')
 
 def contados(request):
     if request.method == "POST":
@@ -71,15 +62,12 @@ def enviado(request):
     contados = Contados.objects.all()
     return render(request, 'enviado.html', {'contados': contados})
 
-def adicionado_lojas(request):
-    return render(request, 'adicionado_lojas.html')
-
 def cadastra_loja(request):
     if request.method == 'POST':
         lojas_form = LojasModelForm(request.POST, request.FILES)
         if lojas_form.is_valid():
             lojas_form.save()
-            return redirect('adicionado-lojas')
+            return redirect('pagina-loja')
     else:
         lojas_form = LojasModelForm()
     return render(request, 'cadastra_lojas.html', {'lojas_form': lojas_form})
@@ -87,9 +75,6 @@ def cadastra_loja(request):
 def lojas(request):
     lojas = Lojas.objects.all()
     return render(request, 'lojas.html', {'lojas': lojas})
-
-def atualiza_sucessolojas(request):
-    return render(request, 'atualizado_sucessolojas.html')
 
 def atualizado_lojas(request, id):
     bike = get_object_or_404(Bike, id=id)
@@ -109,26 +94,20 @@ def atualizado_lojas(request, id):
         if len(foto) > 0:
             bike.foto = foto
         bike.save()
-        return redirect('atualiza-sucessolojas')
-    return render(request, 'atualiza_loja.html', {'bike': bike})
-
-def deleta_sucesso_lojas(request):
-    return render(request, 'deleta_sucesso_lojas.html',)
+        return redirect('pagina-loja')
+    return render(request, 'cadastra_lojas.html', {'bike': bike})
 
 def deleta_lojas(request, id):
     deleta_lojas = get_object_or_404(Lojas, id=id)
     deleta_lojas.delete()
-    return redirect('deleta-sucesso-lojas')
-
-def adicionado_pessoas(request):
-    return render(request, 'adicionado_pessoas.html')
+    return redirect('pagina-loja')
 
 def cadastra_pessoas(request):
     if request.method == 'POST':
         pessoas = PessoasModelForm(request.POST, request.FILES)
         if pessoas.is_valid():
             pessoas.save()
-            return redirect('adicionado-pessoas')
+            return redirect('pagina-vendedores')
     else:
         pessoas = PessoasModelForm()
     return render(request, 'pessoas.html', {'pessoas': pessoas})
@@ -136,19 +115,6 @@ def cadastra_pessoas(request):
 def vendedores(request):
     informacao_pessoas = Pessoas.objects.all()
     return render(request, 'vendedores.html', {'vendedores': informacao_pessoas})
-
-def atualizado_sucesso_pessoas(request):
-    return render(request, 'atualizado_sucesso_pessoas.html')
-
-def atualiza_vendedores(request, id):
-    if request.method == 'POST':
-        atualiza_vendedores = PessoasModelForm(request.POST, request.FILES)
-        if atualiza_vendedores.is_valid():
-            atualiza_vendedores.save()
-            return redirect('adicionado-pessoas')
-    else:
-        atualiza_vendedores = PessoasModelForm()
-    return render(request, 'atualiza_vendedores.html', {'vendedores': atualiza_vendedores})
 
 def atualiza_pessoas(request, id):
     pessoas_atualiza = get_object_or_404(Pessoas, id=id)
@@ -165,27 +131,20 @@ def atualiza_pessoas(request, id):
         if len(opcao_lojas) > 0:
             pessoas_atualiza.opcao_lojas = opcao_lojas
         pessoas_atualiza.save()
-        return redirect('atualizado-sucesso-pessoas')
-    return render(request, 'atualiza_vendedores.html', {'vendeodres': pessoas_atualiza})
-
-
-def deleta_sucesso_pessoas(request):
-    return render(request, 'deleta_sucesso_pessoas')
+        return redirect('pagina-vendedores')
+    return render(request, 'cpessoas.html', {'vendeodres': pessoas_atualiza})
 
 def deleta_pessoas(request, id):
     pessoas = get_object_or_404(Pessoas, id=id)
     pessoas.delete()
-    return redirect('deleta-sucesso-pessoas')
-
-def adicionado_detalhe(request):
-    return render(request, 'adicionado_detalhe.html')
+    return redirect('pagina-vendedores')
 
 def detalhes_bikes(request):
     if request.method == 'POST':
         detalhe_bike = DetalheModeForm(request.POST, request.FILES)
         if detalhe_bike.is_valid():
             detalhe_bike.save()
-            return redirect('adicionado-detalhe')
+            return redirect('pagina-produtos')
     else:
         detalhe_bike = DetalheModeForm()
     return render(request, 'detalhe_bike.html', {'detalhe': detalhe_bike})
