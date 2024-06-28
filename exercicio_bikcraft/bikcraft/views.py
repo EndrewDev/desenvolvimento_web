@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BikeModelForm, ContadosModelForm, LojasModelForm, PessoasModelForm, DetalheModeForm
 from .models import Bike, Contados, Lojas, Pessoas, DetalheBikes
+from django.contrib.auth.decorators import login_required
 
 # home:
 def home(request):
@@ -12,14 +13,21 @@ def sobre(request):
 
 # cadastra produtos:
 def cadastra_produtos(request):
-    if request.method == 'POST':
-        bike_form = BikeModelForm(request.POST, request.FILES)
-        if bike_form.is_valid():
-            bike_form.save()
-            return redirect('pagian-produtos')
+
+    user = request.user
+    if user.is_authenticated:
+
+        if request.method == 'POST':
+            bike_form = BikeModelForm(request.POST, request.FILES)
+            if bike_form.is_valid():
+                bike_form.save()
+                return redirect('pagian-produtos')
+        else:
+            bike_form = BikeModelForm()
+            return render(request, 'cadastra_produtos.html', {'form': bike_form})
     else:
-        bike_form = BikeModelForm()
-    return render(request, 'cadastra_produtos.html', {'form': bike_form})
+        return redirect('pagina-inicial')
+        
 
 # recebe as informação para html:
 def produtos(request):
@@ -71,6 +79,7 @@ def enviado(request):
     return render(request, 'enviado.html', {'contados': contados})
 
 # cadastra loja:
+@login_required
 def cadastra_loja(request):
     if request.method == 'POST':
         lojas_form = LojasModelForm(request.POST, request.FILES)
