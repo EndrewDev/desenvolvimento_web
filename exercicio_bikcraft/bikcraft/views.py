@@ -12,6 +12,7 @@ def sobre(request):
     return render(request, 'sobre.html')
 
 # cadastra produtos:
+@login_required
 def cadastra_produtos(request):
 
     user = request.user
@@ -124,6 +125,7 @@ def deleta_lojas(request, id):
     return redirect('pagina-loja')
 
 #cadstra vendedor:
+@login_required
 def cadastra_pessoas(request):
     if request.method == 'POST':
         pessoas = PessoasModelForm(request.POST, request.FILES)
@@ -164,7 +166,8 @@ def deleta_pessoas(request, id):
     pessoas.delete()
     return redirect('pagina-vendedores')
 
-# cadastra detalhe: 
+# cadastra detalhe:
+@login_required
 def detalhes_bikes(request):
     if request.method == 'POST':
         detalhe_bike = DetalheModeForm(request.POST, request.FILES)
