@@ -26,7 +26,7 @@
                 <h4>{{produto.descricao}}</h4>
                 <h3> R$ {{produto.preco}}</h3>
                 <div class="button-container">
-                    <a href='{% url "deleta-produtos" produto.id %}'><button>Deleta</button></a>
+                    <a href='{% url "deleta-produto" produto.id %}'><button>Deleta</button></a>
                     <a id='atualizado' href='{% url "pagina-atualizado" produto.id %}'><button id='atualiza'>Atualizar</button></a>
                 </div>
                 <br>
