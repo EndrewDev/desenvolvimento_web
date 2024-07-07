@@ -33,6 +33,9 @@ def cadastra_produtos(request):
 # recebe as informação para html:
 def produtos(request):
     bike = Bike.objects.all()
+    search = request.GET.get('search')
+    if search:
+        bike = bike.filter(modelo__icontains=search)
     return render(request, 'produtos.html', {'produtos': bike})
 
 # atualiza produto:
@@ -94,6 +97,9 @@ def cadastra_loja(request):
 # recebe as informação para html:
 def lojas(request):
     lojas = Lojas.objects.all()
+    search = request.GET.get('search')
+    if search:
+        lojas = lojas.filter(modelo__icontains=search)
     return render(request, 'lojas.html', {'lojas': lojas})
 
 # atualiza loja:

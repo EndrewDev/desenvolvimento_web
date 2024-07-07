@@ -13,9 +13,9 @@
         <a href='{% url "cadastra-detalhe" %}'><button>Adiciona mais informação</button></a>
     </div>
     <br>
-    <div class='col-12'>
-        <input type='text' class='form-control' id='search' placeholder='Pesquisa Produtos'>
-    </div>
+    <form class='col-12' method='GET' action='{% url "pagina-produtos" %}'>
+        <input type='text' name='search' class='form-control' id='search' placeholder='Pesquisa Produtos'>
+    </form>
     <br>
     <section id="products">
         {% for produto in produtos %}
