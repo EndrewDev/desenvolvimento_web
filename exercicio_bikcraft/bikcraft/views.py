@@ -39,13 +39,14 @@ def produtos(request):
     return render(request, 'produtos.html', {'produtos': bike})
 
 # atualiza produto:
-def atualizado_produtos(request, id):
-    bike = get_object_or_404(Bike, id=id)
+def atualizado_produtos(request, pk):
+    bike = get_object_or_404(Bike, pk=pk)
     print(request.POST)
     if request.method == 'POST':
-        form = BikeModelForm(request.POST, instane=bike)
-        form.save()
-        return redirect('pagina-produtos')
+        form = BikeModelForm(request.POST, instance=bike)
+        if form.is_valid():
+            form.save()
+            return redirect('pagina-produtos')
     else:
         form = BikeModelForm(instance=bike)
     return render(request, 'cadastra_produtos_atualizar.html', {'atualizado': bike})

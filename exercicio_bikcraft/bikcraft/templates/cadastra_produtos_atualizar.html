@@ -31,17 +31,15 @@
     </section>
 
     <section class="contact-form">
-        {% for produto in atualizado %}
-            <h2>Atualizar Produtos {{bike.modelo}}</h2>
-            <form method='POST' enctype='multipart/form-data' action='{% url "pagina-cadastraprodutos" produto.id %}'>
-                {% csrf_token %}
+        <h2>Atualizar Produtos {{bike.modelo}}</h2>
+        <form method='POST' enctype='multipart/form-data' action='{% url "pagina-produtos"%}'>
+            {% csrf_token %}
 
-                {{form.as_p}}
-                <div class='button-container'>
-                    <button type='submit'>Atualizar</button>
-                </div>
-            </form>
-        {% endfor %}
+            {{form.as_p}}
+            <div class='button-container'>
+                <button type='submit'>Atualizar</button>
+            </div>
+        </form>
     </section>
     <footer>
         <p>&copy;Bikcraft. Alguns direitos reservados</p>

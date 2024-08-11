@@ -11,7 +11,7 @@ urlpatterns = [
     # produtos
     path('cadastra_produtos/', views.cadastra_produtos, name='pagina-cadastraprodutos'),
     path('produtos/', views.produtos, name='pagina-produtos'),
-    path('atualiza_produtos/<int:id>/', views.atualizado_produtos, name='pagina-atualizado'),
+    path('atualiza_produtos/<int:pk>/', views.atualizado_produtos, name='pagina-atualizado'),
     path('deleta_produto/<int:id>/', views.deleta_produto, name='deleta-produto'),
 
     # lojas
