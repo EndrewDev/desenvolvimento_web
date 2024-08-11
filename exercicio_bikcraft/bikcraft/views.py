@@ -41,24 +41,14 @@ def produtos(request):
 # atualiza produto:
 def atualizado_produtos(request, id):
     bike = get_object_or_404(Bike, id=id)
-
+    print(request.POST)
     if request.method == 'POST':
-        modelo = request.POST.get('modelo')
-        preco = request.POST.get('preco')
-        descricao = request.POST.get('descricao')
-        foto = request.POST.get('foto')
-
-        if len(modelo) > 0:
-            bike.modelo = modelo
-        if len(preco) > 0:
-            bike.preco = preco
-        if len(descricao) > 0:
-            bike.descricao = descricao
-        if len(foto) > 0:
-            bike.foto = foto
-        bike.save()
+        form = BikeModelForm(request.POST, instane=bike)
+        form.save()
         return redirect('pagina-produtos')
-    return render(request, 'cadastra_produtos.html', {'atualizado': bike})
+    else:
+        form = BikeModelForm(instance=bike)
+    return render(request, 'cadastra_produtos_atualizar.html', {'atualizado': bike})
 
 # deleta produto:
 def deleta_produto(request, id):
