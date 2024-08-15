@@ -52,9 +52,9 @@ def atualizado_produtos(request, pk):
     return render(request, 'cadastra_produtos_atualizar.html', {'form': form, 'bike': bike})
 
 # deleta produto:
-def deleta_produto(request, id):
-    produto_deleta = get_object_or_404(Bike, id=id)
-    produto_deleta.delete()
+def deleta_produto(request, pk):
+    deleta_produtos = get_object_or_404(Bike, pk=pk)
+    deleta_produtos.delete()
     return redirect('pagina-produtos')
 
 # contado:

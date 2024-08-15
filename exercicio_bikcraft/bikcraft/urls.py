@@ -12,7 +12,7 @@ urlpatterns = [
     path('cadastra_produtos/', views.cadastra_produtos, name='pagina-cadastraprodutos'),
     path('produtos/', views.produtos, name='pagina-produtos'),
     path('produtos/atualizar/<int:pk>/', views.atualizado_produtos, name='pagina-atualizado'),
-    path('deleta_produto/<int:id>/', views.deleta_produto, name='deleta-produto'),
+    path('produto/deleta/<int:pk>/', views.deleta_produto, name='deleta-produto'),
 
     # lojas
     path('cadastra_lojas/', views.cadastra_loja, name='cadastra-loja'),
