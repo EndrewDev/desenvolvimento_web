@@ -49,7 +49,7 @@ def atualizado_produtos(request, pk):
             return redirect('pagina-produtos')
     else:
         form = BikeModelForm(instance=bike)
-    return render(request, 'cadastra_produtos_atualizar.html', {'atualizado': bike})
+    return render(request, 'cadastra_produtos_atualizar.html', {'form': form, 'atualizado': bike})
 
 # deleta produto:
 def deleta_produto(request, id):
