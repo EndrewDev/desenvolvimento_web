@@ -53,7 +53,8 @@ def atualizado_produtos(request, pk):
 
 # deleta produto:
 def deleta_produto(request, id):
-    deleta_produtos = get_object_or_404(Bike, id=id)
+    deleta_produtos = get_object_or_404(Bike, pk=id)
+    print(deleta_produtos)
     deleta_produtos.delete()
     return redirect('pagina-produtos')
 
