@@ -52,8 +52,8 @@ def atualizado_produtos(request, pk):
     return render(request, 'cadastra_produtos_atualizar.html', {'form': form, 'bike': bike})
 
 # deleta produto:
-def deleta_produto(request, pk):
-    deleta_produtos = get_object_or_404(Bike, pk=pk)
+def deleta_produto(request, id):
+    deleta_produtos = get_object_or_404(Bike, id=id)
     deleta_produtos.delete()
     return redirect('pagina-produtos')
 
